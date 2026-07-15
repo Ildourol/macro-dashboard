@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Earnings & Economic Calendar Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html" class="active">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Earnings &amp; Economic Calendar</h1>
+ <div class="sub">Earnings data sourced from FactSet Earnings Insight (07/02 edition) / attached calendar links; economic-event forecasts re-verified against a live economic-calendar feed 2026-07-06 with source-date caveats preserved.</div>
+</div>
+
+<section id="factset">
+ <h2>FactSet Earnings Insight Q2 2026 Season Scorecard <span class="count">FACT report dated 2026-07-02</span></h2>
+ <div class="panel">
+ <div class="grid grid-4">
+ <div class="card"><div class="name">Blended EPS Growth (Y/Y)</div><div class="price">23.3%</div><div class="note">2nd straight quarter above 20% if confirmed; up from 18.8% est. on 3/31.</div></div>
+ <div class="card"><div class="name">Blended Revenue Growth</div><div class="price">12.2%</div><div class="note">Highest since Q2 2022 (13.9%) if confirmed.</div></div>
+ <div class="card"><div class="name">Forward 12M P/E</div><div class="price">20.4x</div><div class="note">Above 5-yr avg (19.9x) and 10-yr avg (19.0x). Trailing P/E 27.8x.</div></div>
+ <div class="card"><div class="name">Net Profit Margin</div><div class="price">14.2%</div><div class="note">2nd-highest on record since 2009 (record 14.8% last quarter).</div></div>
+ <div class="card"><div class="name">EPS Guidance Mix</div><div class="price">63 pos / 48 neg</div><div class="note">57% positive highest since Q3 2021; Info Tech drives 44 of 63.</div></div>
+ <div class="card"><div class="name">Qtr. EPS Revision</div><div class="price">+3.4%</div><div class="note">Largest upward revision since Q2 2021 (+7.7%) analysts usually cut mid-quarter.</div></div>
+ <div class="card"><div class="name">CY2026 Bottom-Up EPS</div><div class="price">$340.52</div><div class="note">Up 6.3% from $320.39 on 3/31. CY2026 growth projected +24.1%.</div></div>
+ <div class="card"><div class="name">S&amp;P 500 Target Price</div><div class="price">8,947.08</div><div class="note">+19.6% above 7,483.23 reference close. 59.7% Buy / 35.4% Hold / 4.8% Sell (12,816 ratings).</div></div>
+ </div>
+ <div class="chartbox" style="margin-top:16px;">
+ <h3>Sector EPS Revision Q2 2026 (extremes cited by FactSet)</h3>
+ <div class="chart-canvas-wrap short"><canvas id="chartSectorRev"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Horizontal bars show how far analysts moved each sector&#39;s Q2 EPS estimate during the quarter - green right = upgrades, red left = cuts. Analysts normally CUT estimates mid-quarter, so any green here is already unusual. <strong>Current read:</strong> Energy (+61.5%) and Info Tech (+8.7%) drove the upgrade cycle; Health Care (-15.3%) was the one deep cut (Gilead guidance). <strong>Use:</strong> Sectors with big upward revisions carry the highest disappointment risk into their actual prints - a beat is already priced; guidance is what moves them.</div>
+ </div>
+ <div class="commentary">
+ <strong>What this means <span class="badge b-inf">INFERENCE</span>:</strong> Analysts raised Q2 EPS estimates into the print rather than cutting them unusual (average is a 24% mid-quarter cut). Energy (+61.5%, Exxon/Chevron-driven) and Info Tech (+8.7%, Micron/NVIDIA/Apple/Sandisk-driven) lead the upgrades; Health Care was cut hard (-15.3%, Gilead guidance). A forward P/E of 20.4x above both the 5Y and 10Y average means a beat is close to priced in asymmetry favors surprise on guidance/margins over the headline growth number.
+ <br><strong>Companies reporting next week per FactSet:</strong> 3 S&amp;P 500 constituents, cross-referenced below as <strong>PEP, PGR, DAL</strong>.
+ </div>
+ </div>
+</section>
+
+<section id="earnings-table">
+ <h2>Earnings Calendar - Next 7 Sessions <span class="count">FACT / CAVEAT - attached earnings-calendar source; live refresh may be access-limited</span></h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;"><strong>Refresh note:</strong> FactSet Earnings Insight refreshed successfully as a 36-page PDF dated July 2, 2026. The dynamic investing.com earnings calendar can be access-limited from automated fetches; do not treat earnings rows as live unless manually refreshed in browser before trade planning.</div>
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Date</th><th>Company</th><th>Ticker</th><th>EPS Est.</th><th>Revenue Est.</th><th>Note</th></tr></thead>
+ <tbody>
+ <tr><td>Mon Jul 6</td><td>Park Aerospace</td><td>PKE</td><td class="num"></td><td class="num">$17.64M</td><td><span class="badge b-inf">New this pull</span></td></tr>
+ <tr><td>Mon Jul 6</td><td>ASOS plc</td><td>ASOMY</td><td class="num"></td><td class="num"></td><td></td></tr>
+ <tr><td>Mon Jul 6</td><td>Americas Car-Mart</td><td>CRMT</td><td class="num">-0.5767</td><td class="num">$332.46M</td><td></td></tr>
+ <tr><td>Tue Jul 7</td><td>Penguin Solutions</td><td>PENG</td><td class="num">0.5236</td><td class="num">$399.86M</td><td></td></tr>
+ <tr><td>Tue Jul 7</td><td>Enerpac Tool Group</td><td>EPAC</td><td class="num">0.4975</td><td class="num">$165.03M</td><td></td></tr>
+ <tr><td>Tue Jul 7</td><td>Kura Sushi</td><td>KRUS</td><td class="num">-0.003</td><td class="num">$86.44M</td><td></td></tr>
+ <tr><td>Tue Jul 7</td><td>Saratoga Investment Corp</td><td>SAR</td><td class="num">0.5585</td><td class="num">$31.3M</td><td></td></tr>
+ <tr><td>Wed Jul 8</td><td>Levi Strauss</td><td>LEVI</td><td class="num">0.2398</td><td class="num">$1.52B</td><td></td></tr>
+ <tr><td>Wed Jul 8</td><td>PriceSmart</td><td>PSMT</td><td class="num">1.32</td><td class="num">$1.42B</td><td></td></tr>
+ <tr><td>Wed Jul 8</td><td>AZZ Inc.</td><td>AZZ</td><td class="num">1.69</td><td class="num">$434.53M</td><td></td></tr>
+ <tr><td>Wed Jul 8</td><td>Helen of Troy Ltd</td><td>HELE</td><td class="num">-0.0527</td><td class="num">$368.53M</td><td></td></tr>
+ <tr style="background:rgba(77,163,255,.06)"><td>Thu Jul 9</td><td><strong>PepsiCo</strong></td><td>PEP</td><td class="num">2.21</td><td class="num">$23.97B</td><td><span class="badge b-fact">S&amp;P 500</span></td></tr>
+ <tr><td>Thu Jul 9</td><td>Fast Retailing ADR</td><td>FRCOY</td><td class="num">0.2382</td><td class="num">$5.95B</td><td></td></tr>
+ <tr style="background:rgba(77,163,255,.06)"><td>Thu Jul 9</td><td><strong>Progressive Corp</strong></td><td>PGR</td><td class="num">4.62 <span style="color:var(--muted);font-size:11px;">(was 4.53)</span></td><td class="num">$21.53B</td><td><span class="badge b-fact">S&amp;P 500</span></td></tr>
+ <tr><td>Thu Jul 9</td><td>Seven &amp; i ADR</td><td>SVNDY</td><td class="num">0.0975</td><td class="num">$15.03B</td><td></td></tr>
+ <tr><td>Thu Jul 9</td><td>Vista Oil &amp; Gas</td><td>VIST</td><td class="num">3.69</td><td class="num">$1.19B</td><td></td></tr>
+ <tr><td>Thu Jul 9</td><td>WD-40</td><td>WDFC</td><td class="num">1.57</td><td class="num">$170.17M</td><td></td></tr>
+ <tr><td>Thu Jul 9</td><td>WaFd Inc</td><td>WAFD</td><td class="num">0.76</td><td class="num">$191.74M</td><td></td></tr>
+ <tr><td>Thu Jul 9</td><td>Nurix Therapeutics</td><td>NRIX</td><td class="num">-0.7208</td><td class="num">$15.92M</td><td></td></tr>
+ <tr><td>Thu Jul 9</td><td>Simply Good Foods</td><td>SMPL</td><td class="num">0.3523</td><td class="num">$332.91M</td><td></td></tr>
+ <tr style="background:rgba(77,163,255,.06)"><td>Fri Jul 10</td><td><strong>Delta Air Lines</strong></td><td>DAL</td><td class="num">1.53 <span style="color:var(--muted);font-size:11px;">(was 1.50)</span></td><td class="num">$17.47B</td><td><span class="badge b-fact">S&amp;P 500</span></td></tr>
+ <tr><td>Fri Jul 10</td><td>Hyatt Hotels</td><td>H</td><td class="num">0.8965</td><td class="num">$1.81B</td><td></td></tr>
+ <tr><td>Fri Jul 10</td><td>Ryohin Keikaku (MUJI)</td><td>RYKKY</td><td class="num">0.1153</td><td class="num">$1.5B</td><td></td></tr>
+ <tr><td>Fri Jul 10</td><td>Unity Bancorp</td><td>UNTY</td><td class="num">1.44</td><td class="num">$34.63M</td><td></td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ This week's calendar is dominated by small/micro caps the market-moving cluster is next Thu/Fri (PEP, PGR, DAL). PEP is a read on staples pricing power, PGR on insurance underwriting margins, DAL is the first major travel-demand/jet-fuel read heading into Q3. None move ES/NQ/YM alone, but DAL is a leading indicator for Transports and crude-demand assumptions.
+ </div>
+ </div>
+</section>
+
+<section id="econ">
+ <h2>US Economic Calendar <span class="count">FACT - briefing.com/calendars/economic, visible refresh dated 03-Jul-26 00:06 ET</span></h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">
+ <strong>Provenance:</strong> Forecast/prior figures re-verified against a live economic-calendar feed on 2026-07-06 (supersedes the 03-Jul Briefing snapshot). Forward-week highlights are now populated: today's ISM Services, the June <strong>FOMC Minutes (Wed 07/08)</strong>, and the two prints that matter most for the compressed-vol regime — <strong>CPI (Tue 07/14): headline 3.9% YoY expected, cooling from 4.2%; core 2.8% from 2.9%</strong> — and <strong>PPI (Wed 07/15): 0.8% MoM from 1.1%</strong>.</div>
+ <div class="tablewrap" style="margin-top:12px;">
+ <table>
+ <thead><tr><th>Date</th><th>Event</th><th>Forecast</th><th>Consensus</th><th>Prior</th></tr></thead>
+ <tbody>
+ <tr><td rowspan="4">Wed Jul 1</td><td>ADP Employment Change</td><td class="num">125K</td><td class="num">112K</td><td class="num">122K</td></tr>
+ <tr><td>ISM Manufacturing Index</td><td class="num">54.0%</td><td class="num">53.8%</td><td class="num">54.0%</td></tr>
+ <tr><td>Construction Spending</td><td class="num">0.6%</td><td class="num">0.5%</td><td class="num">0.4%</td></tr>
+ <tr><td>EIA Crude Inventories</td><td class="num"></td><td class="num"></td><td class="num">-6.09M</td></tr>
+ <tr style="background:rgba(77,163,255,.06)"><td rowspan="4">Thu Jul 2</td><td><strong>Nonfarm Payrolls</strong></td><td class="num">130K</td><td class="num">110K</td><td class="num">172K</td></tr>
+ <tr style="background:rgba(77,163,255,.06)"><td><strong>Unemployment Rate</strong></td><td class="num">4.3%</td><td class="num">4.3%</td><td class="num">4.3%</td></tr>
+ <tr><td>Avg Hourly Earnings</td><td class="num">0.3%</td><td class="num">0.3%</td><td class="num">0.3%</td></tr>
+ <tr><td>Initial Claims / Factory Orders</td><td class="num">218K / 2.0%</td><td class="num">220K / 1.5%</td><td class="num">215K / 4.8%</td></tr>
+ <tr style="background:rgba(77,163,255,.06)"><td>Mon Jul 6</td><td><strong>ISM Services / Non-Mfg PMI</strong> (today)</td><td class="num">54.0</td><td class="num">54.2</td><td class="num">54.5</td></tr>
+ <tr><td>Tue Jul 7</td><td>Trade Balance</td><td class="num">-$78B</td><td class="num"></td><td class="num">-$55.9B</td></tr>
+ <tr style="background:rgba(255,77,94,.08)"><td>Wed Jul 8</td><td><strong>FOMC Minutes</strong> (June meeting)</td><td class="num"></td><td class="num"></td><td class="num">—</td></tr>
+ <tr><td>Thu Jul 9</td><td>Existing Home Sales / Jobless Claims</td><td class="num">4.2M / 220K</td><td class="num"></td><td class="num">4.17M / 215K</td></tr>
+ <tr style="background:rgba(255,77,94,.12)"><td>Tue Jul 14</td><td><strong>CPI MoM / YoY</strong></td><td class="num">0.4% / 3.9%</td><td class="num"></td><td class="num">0.5% / 4.2%</td></tr>
+ <tr style="background:rgba(255,77,94,.12)"><td>Tue Jul 14</td><td><strong>Core CPI MoM / YoY</strong></td><td class="num">0.3% / 2.8%</td><td class="num"></td><td class="num">0.2% / 2.9%</td></tr>
+ <tr style="background:rgba(255,77,94,.08)"><td>Wed Jul 15</td><td><strong>PPI MoM / Empire State</strong></td><td class="num">0.8% / —</td><td class="num"></td><td class="num">1.1% / 5.7</td></tr>
+ <tr><td>Thu Jul 16</td><td>Retail Sales MoM / Philly Fed</td><td class="num">0.3% / —</td><td class="num"></td><td class="num">0.9% / 10.3</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>Event-risk read <span class="badge b-inf">INFERENCE</span>:</strong> The catalyst chain is dominated by labor and inflation checkpoints, which keeps rates and equity multiples tightly coupled — exactly the transmission channel documented on the <a href="rates.html">Rates page</a>. Consensus expects CPI to <em>cool</em> to 3.9% YoY (from 4.2%) and core to 2.8% — but 3.9% is still well above target, so the market is priced for disinflation-in-progress, not victory. The asymmetry is a <em>hot</em> print: an upside CPI surprise directly feeds the SOFR-strip hike repricing (see <a href="rates.html#policy-path">Rates §4</a>) toward BofA's three-hike call and hits long-duration growth (NQ) and small caps (RTY) first, while an in-line/soft print vindicates the strip and relieves them. The <strong>FOMC Minutes (07/08)</strong> are an earlier tell on how divided the Committee is. Reduce gross exposure into 07/14–07/15 if price is extended — this is the event window the <a href="risk-lab.html#vrp">owned-convexity thesis</a> (now fair-to-cheap on the rebuilt VRP) is designed for.
+ </div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Section data: investing.com, factset.com. Educational framework only.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8'; Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartSectorRev'), {
+ type: 'bar',
+ data: {
+ labels: ['Energy','Info Tech','Materials','Industrials','Financials','Comm Svcs','Health Care'],
+ datasets: [{
+ label: 'Q2 2026 EPS Estimate Revision %',
+ data: [61.5, 8.7, 4.1, 2.6, 1.2, -3.5, -15.3],
+ backgroundColor: (ctx)=> ctx.raw>=0 ? '#28c76f' : '#ff4d5e'
+ }]
+ },
+ options:{ indexAxis:'y', plugins:{legend:{display:false}} }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

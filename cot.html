@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insider Week COT Positioning - Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Insider Week COT positioning</span></div><div><span class="badge b-fact">Insider Week</span><span class="badge b-neu">Smart Money Heatmap</span><span class="badge b-inf">Index Futures</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html" class="active">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Insider Week COT Positioning</h1>
+ <div class="sub">Total revamp from the latest Voicenotes instruction: COT positioning now uses Insider Week COT, Insider Week TFF, the Smart Money Heatmap, and the four index-specific pages for S&amp;P 500, Nasdaq E-mini, Russell 2000, and Dow E-mini. Public source snapshot is the June 26, 2026 COT window; Insider Week notes the next official COT release is delayed until Monday July 6, 2026.</div>
+</div>
+
+<section>
+ <h2>1. Source Map <span class="count">new COT evidence stack</span></h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead><tr><th>Source</th><th>Use In This Page</th><th>Public Access Caveat</th></tr></thead>
+ <tbody>
+ <tr><td><a href="https://insider-week.com/en/cot/#cot-table">Insider Week COT table</a></td><td>Current visible index rows: price change, open interest, open interest change, commercial net/change, large spec net/change, and small trader net/change.</td><td>Visible table is used directly. It states the report window is 06/26/2026 and warns the next release is delayed until 07/06/2026.</td></tr>
+ <tr><td><a href="https://insider-week.com/en/cot/tff/#cot-table">Insider Week TFF table</a></td><td>Cross-check for Traders in Financial Futures categories, especially dealer/intermediary, asset manager/institutional, leveraged funds, and other reportables.</td><td>Public table text is available, but grouped headers are compressed in text mode; use as source coverage and refresh target, not as the only local calculation source.</td></tr>
+ <tr><td><a href="https://insider-week.com/en/cot/heatmap/#cot-table">Smart Money Heatmap</a></td><td>Weekly smart-money heatmap percentages. This replaces the old 52-week rank concept with a visible 26-week rolling heatmap.</td><td>Visible public heatmap gives the latest weekly row and previous weeks. Green is bullish commercial extreme; red is bearish commercial extreme.</td></tr>
+ <tr><td><a href="https://insider-week.com/en/cot/s&amp;p-500/#nav">S&amp;P 500 page</a>, <a href="https://insider-week.com/en/cot/nasdaq-e-mini/#nav">Nasdaq page</a>, <a href="https://insider-week.com/en/cot/russell-2000/#nav">Russell page</a>, <a href="https://insider-week.com/en/cot/dow-e-mini/#nav">Dow page</a></td><td>Instrument-level source links for chart verification and future drill-down refresh.</td><td>Historical chart depth is partly gated. This dashboard uses only visible public table fields unless logged-in data is explicitly supplied.</td></tr>
+ </tbody>
+ </table>
+ </div>
+</section>
+
+<section>
+ <h2>2. Equity Index COT Table <span class="count">FACT - Insider Week, week to 06/26/2026</span></h2>
+ <div class="panel">
+ <div class="grid grid-4">
+  <div class="card"><div class="name">S&amp;P 500</div><div class="price down">-87,130</div><div class="note">Commercial net; open interest change -23%, commercial net change -245%.</div></div>
+  <div class="card"><div class="name">Nasdaq</div><div class="price up">+519</div><div class="note">Commercial net is barely positive; open interest change -23%, commercial net change -87%.</div></div>
+  <div class="card"><div class="name">Russell</div><div class="price up">+17,172</div><div class="note">Commercial net is strongest of the four; open interest change -22%, commercial net change +79%.</div></div>
+  <div class="card"><div class="name">Dow E-mini</div><div class="price down">-15,699</div><div class="note">Commercial net is negative; open interest change -23%, commercial net change -46%.</div></div>
+ </div>
+ <div class="tablewrap" style="margin-top:12px;">
+ <table>
+ <thead><tr><th>Market</th><th>Price Change</th><th>Open Interest</th><th>OI Change</th><th>Commercial Net</th><th>Commercial Change</th><th>Large Spec Net</th><th>Large Spec Change</th><th>Small Trader Net</th><th>Small Trader Change</th></tr></thead>
+ <tbody>
+ <tr><td>S&amp;P 500</td><td class="num down">-2.04%</td><td class="num">1,980,254</td><td class="num down">-23%</td><td class="num down">-87,130</td><td class="num down">-245%</td><td class="num down">-35,448</td><td class="num up">+82%</td><td class="num up">+122,578</td><td class="num down">-8%</td></tr>
+ <tr><td>Nasdaq</td><td class="num down">-4.17%</td><td class="num">265,083</td><td class="num down">-23%</td><td class="num up">+519</td><td class="num down">-87%</td><td class="num down">-9,144</td><td class="num down">-3%</td><td class="num up">+8,625</td><td class="num up">+79%</td></tr>
+ <tr><td>Russell</td><td class="num up">+0.96%</td><td class="num">386,817</td><td class="num down">-22%</td><td class="num up">+17,172</td><td class="num up">+79%</td><td class="num down">-26,838</td><td class="num down">-33%</td><td class="num up">+9,666</td><td class="num down">-9%</td></tr>
+ <tr><td>Dow E-mini</td><td class="num up">+0.62%</td><td class="num">78,956</td><td class="num down">-23%</td><td class="num down">-15,699</td><td class="num down">-46%</td><td class="num up">+9,474</td><td class="num up">+230%</td><td class="num up">+6,225</td><td class="num down">-21%</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary"><strong>Desk read:</strong> the current table shows broad open-interest contraction across all four index contracts (the June quarterly roll). Commercial positioning is most constructive in Russell, nearly flat in Nasdaq, and negative in S&amp;P 500 and Dow E-mini. The change columns are shown as percentages so direction and speed are visible without relying on the removed COT Index column.
+ <br><br><span class="badge b-fact">Cross-check 2026-07-06</span> An independent CFTC pull (report week 06/23/2026) confirms the S&amp;P 500 E-mini figures exactly: commercial net <strong>−87,130</strong>, large-spec (non-commercial) net <strong>−35,448</strong>, and small-trader (non-reportable) net <strong>+122,578</strong> on open interest of 1,980,254. The read is a <em>crowded-retail-long / cautious-institution</em> split into the data week — large specs are net short the index while small traders are heavily net long — which reinforces the "S&amp;P/Dow more fragile" tilt on the <a href="playbook.html">playbook</a>. <strong>Freshness:</strong> the next official COT prints Monday 07/06 (this evening); until then the 06/26 Insider Week window remains the latest available.</div>
+ </div>
+</section>
+
+<section>
+ <h2>3. Smart Money Heatmap <span class="count">26-week percentage range</span></h2>
+ <div class="panel">
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Market</th><th>Jun 26</th><th>Jun 19</th><th>Jun 12</th><th>Jun 05</th><th>May 29</th><th>May 22</th><th>May 15</th><th>May 08</th><th>May 01</th><th>Apr 24</th><th>Apr 17</th><th>Apr 10</th></tr></thead>
+ <tbody>
+ <tr><td>S&amp;P 500</td><td class="heat hot">0%</td><td class="heat warm">69%</td><td class="heat bull">88%</td><td class="heat bull">100%</td><td class="heat bull">86%</td><td class="heat warm">73%</td><td class="heat bull">80%</td><td class="heat mid">55%</td><td class="heat mid">49%</td><td class="heat warm">56%</td><td class="heat bull">79%</td><td class="heat cool">27%</td></tr>
+ <tr><td>Nasdaq</td><td class="heat bull">80%</td><td class="heat bull">85%</td><td class="heat bull">81%</td><td class="heat bull">100%</td><td class="heat bull">83%</td><td class="heat bull">79%</td><td class="heat bull">100%</td><td class="heat bull">93%</td><td class="heat bull">100%</td><td class="heat bull">81%</td><td class="heat bull">86%</td><td class="heat bull">88%</td></tr>
+ <tr><td>Russell</td><td class="heat warm">74%</td><td class="heat warm">63%</td><td class="heat bull">100%</td><td class="heat warm">68%</td><td class="heat warm">66%</td><td class="heat warm">74%</td><td class="heat mid">49%</td><td class="heat mid">46%</td><td class="heat mid">55%</td><td class="heat mid">52%</td><td class="heat mid">44%</td><td class="heat mid">51%</td></tr>
+ <tr><td>Dow E-mini</td><td class="heat hot">0%</td><td class="heat hot">0%</td><td class="heat cool">28%</td><td class="heat cool">35%</td><td class="heat mid">46%</td><td class="heat mid">55%</td><td class="heat cool">33%</td><td class="heat hot">16%</td><td class="heat hot">23%</td><td class="heat cool">24%</td><td class="heat cool">37%</td><td class="heat warm">59%</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>4. Traders In Financial Futures (TFF) <span class="count">Open interest + category net values</span></h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead><tr><th>Market</th><th>Open Interest</th><th>Dealer / Intermediary Net</th><th>Asset Manager / Institutional Net</th><th>Leveraged Funds Net</th><th>Other Reportables Net</th></tr></thead>
+ <tbody>
+ <tr><td>Adjusted Int Rate S&amp;P 500 Total</td><td class="num">987,537</td><td class="num up">+178,277</td><td class="num up">+245,470</td><td class="num up">+191,928</td><td class="num up">+29,768</td></tr>
+ <tr><td>E-mini S&amp;P 500</td><td class="num">1,980,254</td><td class="num down">-755,900</td><td class="num down">-1,099,084</td><td class="num up">+85,492</td><td class="num down">-373,468</td></tr>
+ <tr><td>E-mini Russell 1000 Value Index</td><td class="num">30,587</td><td class="num up">+8,011</td><td class="num down">-9,369</td><td class="num up">+18,675</td><td class="num">0</td></tr>
+ <tr><td>Micro E-mini Nasdaq-100 Index</td><td class="num">117,242</td><td class="num up">+9,604</td><td class="num down">-9,038</td><td class="num up">+316</td><td class="num down">-63,414</td></tr>
+ <tr><td>Micro E-mini Russell 2000 Index</td><td class="num">21,582</td><td class="num down">-460</td><td class="num down">-7,354</td><td class="num">0</td><td class="num down">-3,821</td></tr>
+ <tr><td>Micro E-mini S&amp;P 500 Index</td><td class="num">176,967</td><td class="num up">+6,856</td><td class="num down">-27,044</td><td class="num up">+1,182</td><td class="num down">-11,011</td></tr>
+ <tr><td>Nasdaq Mini</td><td class="num">265,083</td><td class="num down">-18,807</td><td class="num down">-95,482</td><td class="num up">+32,793</td><td class="num down">-51,062</td></tr>
+ <tr><td>Nasdaq-100 Consolidated</td><td class="num">276,807</td><td class="num down">-17,847</td><td class="num down">-95,593</td><td class="num up">+32,824</td><td class="num down">-57,403</td></tr>
+ <tr><td>Russell 2000 Annual Dividend</td><td class="num">42,875</td><td class="num down">-30,014</td><td class="num up">+2,277</td><td class="num">0</td><td class="num up">+29,567</td></tr>
+ <tr><td>Russell E-mini</td><td class="num">386,817</td><td class="num up">+51,153</td><td class="num down">-149,905</td><td class="num up">+122,661</td><td class="num down">-56,428</td></tr>
+ <tr><td>S&amp;P 500 Annual Dividend Index</td><td class="num">368,698</td><td class="num down">-259,193</td><td class="num down">-93,265</td><td class="num up">+6,953</td><td class="num up">+157,530</td></tr>
+ <tr><td>S&amp;P 500 Consolidated</td><td class="num">1,997,951</td><td class="num down">-755,215</td><td class="num down">-1,099,250</td><td class="num up">+85,575</td><td class="num down">-374,569</td></tr>
+ <tr><td>S&amp;P 500 Quarterly Dividend Index</td><td class="num">40,698</td><td class="num down">-9,421</td><td class="num up">+4,431</td><td class="num">0</td><td class="num up">+8,711</td></tr>
+ <tr><td>VIX Futures</td><td class="num">353,236</td><td class="num up">+45,687</td><td class="num down">-22,659</td><td class="num up">+21,773</td><td class="num down">-18,863</td></tr>
+ <tr><td>DJIA Consolidated</td><td class="num">78,956</td><td class="num down">-3,962</td><td class="num down">-15,084</td><td class="num up">+7,733</td><td class="num down">-9,025</td></tr>
+ <tr><td>DJIA x $5</td><td class="num">78,956</td><td class="num down">-3,962</td><td class="num down">-15,084</td><td class="num up">+7,733</td><td class="num down">-9,025</td></tr>
+ </tbody>
+ </table>
+ <div class="commentary"><strong>TFF read:</strong> this table is calculated directly as long minus short from the visible Insider Week TFF rows. Negative values show the category is net short that contract group; positive values show net long exposure.</div>
+ </div>
+</section>
+
+<section>
+ <h2>5. Insider Week Graph Snapshots <span class="count">4 market columns, 12 source graph panels</span></h2>
+ <div class="panel">
+ <div class="iw-graph-grid">
+  <a class="iw-graph" href="snapshots/insider-week-graphs/sp500-combined.webp" target="_blank" rel="noopener"><span>S&amp;P 500 - Price / COT / Positions</span><img src="snapshots/insider-week-graphs/sp500-combined.webp" alt="Insider Week S&amp;P 500 combined price, COT Index, net positions, and open interest graphs"></a>
+  <a class="iw-graph" href="snapshots/insider-week-graphs/nasdaq-combined.webp" target="_blank" rel="noopener"><span>Nasdaq - Price / COT / Positions</span><img src="snapshots/insider-week-graphs/nasdaq-combined.webp" alt="Insider Week Nasdaq E-mini combined price, COT Index, net positions, and open interest graphs"></a>
+  <a class="iw-graph" href="snapshots/insider-week-graphs/russell-combined.webp" target="_blank" rel="noopener"><span>Russell - Price / COT / Positions</span><img src="snapshots/insider-week-graphs/russell-combined.webp" alt="Insider Week Russell 2000 combined price, COT Index, net positions, and open interest graphs"></a>
+  <a class="iw-graph" href="snapshots/insider-week-graphs/dow-combined.webp" target="_blank" rel="noopener"><span>Dow - Price / COT / Positions</span><img src="snapshots/insider-week-graphs/dow-combined.webp" alt="Insider Week Dow E-mini combined price, COT Index, net positions, and open interest graphs"></a>
+ </div>
+ <div class="commentary"><strong>Source image note:</strong> each market column combines the three visible Insider Week panels: price, COT Index, and positions/open interest. Open a thumbnail to inspect the larger local image without loading the external page.</div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Sources: Insider Week COT table, Insider Week TFF table, Insider Week Smart Money Heatmap, and Insider Week instrument pages for S&amp;P 500, Nasdaq E-mini, Russell 2000, and Dow E-mini. Public snapshot checked 2026-07-05. Educational framework only - not investment advice.</div>
+</body>
+</html>

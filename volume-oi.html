@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Futures Volume & OI Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html" class="active">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Exchange-Wide Futures Volume &amp; Open Interest</h1>
+ <div class="sub">FACT CME Group Daily Information Bulletin #126, Thu Jul 2, 2026 (Sections 01, 01A, 01B, 01C, 02A, 02B, 02C, 74, plus Equities Market Overview and Equity Sector Products Report).</div>
+</div>
+
+<section>
+ <h2>1. CME Group Totals</h2>
+ <div class="panel">
+ <div class="grid grid-4">
+ <div class="card"><div class="name">Total Exchange Volume</div><div class="price">30,000,049</div><div class="note">Futures 24,227,782 Options 5,772,267</div></div>
+ <div class="card"><div class="name">Total Open Interest</div><div class="price">128,121,348</div><div class="note">-357,861 day/day vs +72,365 chg on options-only OI</div></div>
+ <div class="card"><div class="name">Globex Volume Share</div><div class="price">93.5%</div><div class="note">28,058,835 of 30,000,049 total open outcry 941,592, PNT 999,622</div></div>
+ <div class="card"><div class="name">52-Week-Ago Volume</div><div class="price">25,274,058</div><div class="note">Total volume up 18.7% Y/Y; OI up 6.9% Y/Y (119.79M 128.12M)</div></div>
+ </div>
+ <div class="chartbox" style="margin-top:16px;">
+ <h3>Volume &amp; Open Interest by Product Complex (Futures + Options)</h3>
+ <div class="chart-canvas-wrap tall"><canvas id="chartComplex"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Paired bars per complex - blue is session volume (activity today), teal is open interest scaled /10 (risk outstanding). A complex with high OI but modest volume (Energy) is a slow structural book; high volume against modest OI (Equity Index) is a fast-turnover book. <strong>Current read:</strong> Rates dwarfs everything on both measures; Equity Index turns over nearly its entire OI in a single session (10.6M volume vs 10.9M OI) - equity futures are a day-trading arena, rates are a position market. <strong>Use:</strong> Match your holding period to the book: swing positions survive better in high-OI complexes; equity index futures demand tighter intraday management.</div>
+ </div>
+ <div class="tablewrap" style="margin-top:16px;">
+ <table>
+ <thead><tr><th>Complex</th><th>F&amp;O Volume</th><th>F&amp;O Open Interest</th><th>OI Chg</th><th>Futures-Only Vol</th><th>Options-Only Vol</th></tr></thead>
+ <tbody>
+ <tr><td>Interest Rates</td><td class="num">13,957,625</td><td class="num">84,906,599</td><td class="num down">-104,588</td><td class="num">10,299,111</td><td class="num">3,658,514</td></tr>
+ <tr><td>Equity Index</td><td class="num">10,590,210</td><td class="num">10,886,063</td><td class="num down">-13,880</td><td class="num">9,240,882</td><td class="num">1,349,328</td></tr>
+ <tr><td>Energy</td><td class="num">1,974,102</td><td class="num">16,199,346</td><td class="num up">+27,006</td><td class="num">1,640,417</td><td class="num">333,685</td></tr>
+ <tr><td>Comm. &amp; Alt Invst</td><td class="num">1,560,850</td><td class="num">10,339,240</td><td class="num down">-10,049</td><td class="num">1,300,002</td><td class="num">260,848</td></tr>
+ <tr><td>FX</td><td class="num">1,105,191</td><td class="num">3,478,407</td><td class="num down">-250,822</td><td class="num">1,023,858</td><td class="num">81,333</td></tr>
+ <tr><td>Metals</td><td class="num">811,794</td><td class="num">1,998,485</td><td class="num up">+2,703</td><td class="num">723,235</td><td class="num">88,559</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>2. Equity Index Futures Top Products (Section 01C) <span class="count">FACT</span></h2>
+ <div class="panel">
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Product</th><th>Ticker</th><th>Volume</th><th>Open Interest</th><th>OI Chg</th></tr></thead>
+ <tbody>
+ <tr><td>Micro E-mini Nasdaq-100</td><td>MNQ</td><td class="num">3,985,335</td><td class="num">187,944</td><td class="num up">+13,455</td></tr>
+ <tr><td>E-mini S&amp;P 500</td><td>ES</td><td class="num">1,769,341</td><td class="num">1,972,468</td><td class="num down">-5,398</td></tr>
+ <tr><td>Micro E-mini S&amp;P 500</td><td>MES</td><td class="num">1,497,903</td><td class="num">188,722</td><td class="num up">+3,971</td></tr>
+ <tr><td>E-mini Nasdaq-100</td><td>NQ</td><td class="num">652,976</td><td class="num">277,137</td><td class="num down">-503</td></tr>
+ <tr><td>Bitcoin Spot-Quoted Fut.</td><td>QTF</td><td class="num">289,303</td><td class="num">900</td><td class="num up">+432</td></tr>
+ <tr><td>E-mini Russell 2000</td><td>RTY</td><td class="num">176,887</td><td class="num">404,682</td><td class="num down">-125</td></tr>
+ <tr><td>Micro E-mini Dow</td><td>MYM</td><td class="num">163,971</td><td class="num">29,225</td><td class="num up">+4,643</td></tr>
+ <tr><td>Micro E-mini Russell 2000</td><td>M2K</td><td class="num">142,690</td><td class="num">27,661</td><td class="num up">+123</td></tr>
+ <tr><td>Mini $5 Dow</td><td>YM</td><td class="num">100,492</td><td class="num">83,234</td><td class="num down">-590</td></tr>
+ <tr><td>Micro Bitcoin</td><td>MBT</td><td class="num">58,873</td><td class="num">26,167</td><td class="num down">-308</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>MNQ dominance <span class="badge b-inf">INFERENCE</span>:</strong> Micro E-mini Nasdaq-100 traded 3.99M contracts more than double ES's 1.77M and nearly 3x MES confirming retail/small-account futures flow is heavily concentrated in tech/AI-index exposure via the micro contract, consistent with the crowded-momentum-long thesis discussed on the <a href="quant-framework.html">Quant Framework</a> and <a href="futures-setups.html">Trade Setups</a> pages.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>3. Equities Market Overview 5-Day Trend &amp; Sector Liquidity <span class="count">FACT equities-market-data-overview.pdf &amp; cme-equity-sector-products-report.pdf</span></h2>
+ <div class="panel">
+ <div class="chartbox"><div class="chart-canvas-wrap"><canvas id="chartEqTrend"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Stacked daily bars - light blue is equity futures volume, dark is options volume - tracking total equity-derivative participation across the week. Rising stacks into a price move = sponsorship; shrinking stacks = drift. <strong>Current read:</strong> Volume bottomed mid-week (6.33M on 06/30) then surged to the week's high on 07/02 (9.24M futures) - the rotation day printed on the heaviest participation of the window, so the Dow-over-Nasdaq move was sponsored, not thin-tape noise. <strong>Use:</strong> Trust divergence days that print on rising total volume; fade the ones that happen on shrinking bars.</div>
+ </div>
+ <div class="grid grid-4" style="margin-top:16px;">
+ <div class="card"><div class="name">Futures Volume (07/02)</div><div class="price">9,240,882</div><div class="note">Up from 6.33M on 06/30 46% swing in 2 sessions</div></div>
+ <div class="card"><div class="name">Option Put/Call Split</div><div class="price">60.0% Put</div><div class="note">All S&amp;P 500 options, 07/02 puts have led every session in the last 5</div></div>
+ <div class="card"><div class="name">Top Sector by Notional OI</div><div class="price">Financials</div><div class="note">$12.13B notional, 28.5% of total sector OI Technology 2nd at $6.53B (15.4%)</div></div>
+ <div class="card"><div class="name">Dominant Spread Type</div><div class="price">Vertical (29.7%)</div><div class="note">Generic Spread 26.1%, Ratio 14.6%, Delta-Hedged 8.25%</div></div>
+ </div>
+ <div class="commentary">
+ <strong>Equity sector positioning <span class="badge b-inf">INFERENCE</span>:</strong> Financials carry the largest notional open interest of any equity sector future ($12.13B, 28.5% of total) despite Technology having the highest average daily traded value ($833K vs Financials $1.36M actually Financials leads both trading and OI). This is consistent with the bear-steepening/hawkish-Fed narrative: institutional books appear to be running larger structural sector-future positions in rate-sensitive Financials than in the Tech-momentum names that dominate single-stock and index-future retail flow.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>4. Cryptocurrency Futures (Section 74) <span class="count">FACT dated 07/02/2026</span></h2>
+ <div class="panel">
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Contract</th><th>Front Month</th><th>Settle</th><th>Chg</th><th>Volume</th><th>Open Interest</th></tr></thead>
+ <tbody>
+ <tr><td>BTC Futures</td><td>JUL26</td><td class="num">$61,655.00</td><td class="num up">+1,475.00</td><td class="num">7,793 RTH / 16,613 Globex</td><td class="num">+75</td></tr>
+ <tr><td>Micro BTC (MBT)</td><td>JUL26</td><td class="num">$61,655.00</td><td class="num up">+1,475.00</td><td class="num">58,361</td><td class="num">24,830 (-358)</td></tr>
+ <tr><td>ETH Futures</td><td>JUL26</td><td class="num">$1,704.50</td><td class="num up">+84.00</td><td class="num">13,864 RTH</td><td class="num">20,796 (+231)</td></tr>
+ <tr><td>Micro ETH (MET)</td><td>JUL26</td><td class="num">$1,704.50</td><td class="num up">+84.00</td><td class="num">48,205</td><td class="num">34,469 (-45)</td></tr>
+ <tr><td>SOL Futures</td><td>JUL26</td><td class="num">$80.95</td><td class="num up">+3.90</td><td class="num">2,900 RTH</td><td class="num">11,255 (+228)</td></tr>
+ <tr><td>XRP Futures</td><td>JUL26</td><td class="num">$1.0885</td><td class="num up">+0.0235</td><td class="num">585</td><td class="num">6,690 (+113)</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>BTC options skew <span class="badge b-inf">INFERENCE</span>:</strong> The Sep26 68,420 futures settlement (-1,375 on the day) with heavy put open interest building at the 60,000 and 65,000 strikes shows the options market pricing meaningful downside tail risk even as spot bounced +1.01% intraday consistent with the "relief rally inside a downtrend" read on the <a href="futures-setups.html">Trade Setups</a> page. Micro BTC (MBT) open interest fell -358 contracts even as futures volume was healthy net de-risking, not fresh directional conviction.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>5. CME Monthly Volume, ADV &amp; OI June 2026 <span class="count">FACT CME Group monthly report, extracted in companion workspace</span></h2>
+ <div class="panel">
+ <div class="chartbox"><div class="chart-canvas-wrap tall"><canvas id="chartYoY"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Year-over-year volume growth per product from the June monthly report - green bars grew vs. last June, red shrank. Micro (retail-sized) contracts are listed alongside their full-size institutional twins deliberately: the gap between the pair is the retail-vs-institutional divergence. <strong>Current read:</strong> Micro NQ +149% and Micro RTY +146% while full-size Bitcoin, COMEX Gold, and WTI all shrank - the marginal buyer in tech, gold, and crypto futures is now retail-sized. <strong>Use:</strong> Where retail flow is the marginal buyer, trends extend further but reverse harder; tighten stops in exactly the products at the top of this chart.</div>
+ </div>
+ <div class="tablewrap" style="margin-top:14px;">
+ <table>
+ <thead><tr><th>Product</th><th>June Volume</th><th>Vol YoY</th><th>ADV</th><th>OI YoY</th><th>YTD Vol YoY</th></tr></thead>
+ <tbody>
+ <tr style="background:rgba(255,77,94,.06)"><td><strong>Micro E-mini Nasdaq-100</strong></td><td class="num">66,476,558</td><td class="num up">+149.3%</td><td class="num">3,165,550</td><td class="num up">+121.3%</td><td class="num up">+27.9%</td></tr>
+ <tr><td>Micro E-mini Russell 2000</td><td class="num">3,015,521</td><td class="num up">+146.1%</td><td class="num">143,596</td><td class="num up">+9.8%</td><td class="num up">+52.2%</td></tr>
+ <tr><td>Micro Bitcoin</td><td class="num">1,611,107</td><td class="num up">+52.6%</td><td class="num">76,719</td><td class="num up">+29.7%</td><td class="num up">+4.2%</td></tr>
+ <tr><td>Micro E-mini S&amp;P 500</td><td class="num">32,515,076</td><td class="num up">+45.9%</td><td class="num">1,548,337</td><td class="num up">+45.3%</td><td class="num up">+7.0%</td></tr>
+ <tr><td>2Y Note</td><td class="num">19,974,897</td><td class="num up">+43.7%</td><td class="num">951,186</td><td class="num up">+4.1%</td><td class="num up">+18.7%</td></tr>
+ <tr><td>Micro Gold</td><td class="num">7,184,963</td><td class="num up">+39.1%</td><td class="num"></td><td class="num"></td><td class="num up">+118.3%</td></tr>
+ <tr><td>E-mini S&amp;P 500</td><td class="num">41,837,470</td><td class="num up">+31.5%</td><td class="num">1,992,260</td><td class="num up">+4.9%</td><td class="num down">-0.6%</td></tr>
+ <tr><td>SOFR</td><td class="num">92,935,444</td><td class="num up">+23.5%</td><td class="num">4,280,536</td><td class="num up">+16.8%</td><td class="num up">+9.8%</td></tr>
+ <tr><td>10Y Note</td><td class="num">40,548,124</td><td class="num up">+21.0%</td><td class="num">1,930,863</td><td class="num up">+4.0%</td><td class="num up">+5.1%</td></tr>
+ <tr><td>Bitcoin (full-size)</td><td class="num">292,118</td><td class="num down">-10.4%</td><td class="num">13,910</td><td class="num down">-37.4%</td><td class="num down">-34.9%</td></tr>
+ <tr><td>COMEX Gold (full-size)</td><td class="num">3,303,067</td><td class="num down">-19.7%</td><td class="num"></td><td class="num"></td><td class="num down">-10.2%</td></tr>
+ <tr><td>WTI Crude (physical)</td><td class="num">20,418,641</td><td class="num down">-29.1%</td><td class="num">972,316</td><td class="num"></td><td class="num up">+30.7%</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>What this means <span class="badge b-inf">INFERENCE</span>:</strong> The monthly report exposes the structural flow shift that daily bulletins can't: <strong>retail-sized micro contracts are growing at triple-digit rates while their full-size institutional equivalents stagnate or shrink</strong>. MNQ volume +149.3% YoY with OI +121.3% vs. E-mini S&amp;P YTD volume actually negative (-0.6%); Micro Gold +118.3% YTD vs. full-size COMEX Gold -10.2%; Micro Bitcoin +52.6% vs. full-size Bitcoin -10.4% with OI collapsing -37.4%. This is the quantitative confirmation of the retail-crowding thesis running through this terminal the marginal futures buyer in tech, gold, and crypto is now retail-sized, which historically amplifies both trends and reversals. Rates complexes (183.2M monthly contracts) still out-trade equity index (167.3M) institutional risk transfer remains rate-led, confirming the bond market as the master risk switch.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>6. CME Bitcoin Futures Liquidity Report <span class="count">FACT dated 26 Jun 2026, extracted in companion workspace</span></h2>
+ <div class="panel">
+ <div class="grid grid-4">
+ <div class="card"><div class="name">BTC Reference Price</div><div class="price">$65,541</div><div class="note">As of report date (6/26) contract value $327,703; 5-contract notional $1.64M</div></div>
+ <div class="card"><div class="name">5-Contract Bid/Ask</div><div class="price">13.87 bps</div><div class="note">90.88 points wide an order of magnitude wider than ES/NQ execution friction</div></div>
+ <div class="card"><div class="name">Avg Daily Volume</div><div class="price">13,773</div><div class="note">$4.35B daily notional; 0% block-trade share</div></div>
+ <div class="card"><div class="name">Open Interest Trend</div><div class="price">22,227 20,382</div><div class="note">OI fell -8.3% between 6/24 and 6/26 immediately after the volume spike (26,086 on 6/24)</div></div>
+ </div>
+ <div class="chartbox" style="margin-top:16px;">
+ <h3>BTC Futures Daily Volume vs. Open Interest (mid-to-late June)</h3>
+ <div class="chart-canvas-wrap"><canvas id="chartBtcLiq"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Blue bars = daily BTC futures volume (left axis); amber line = open interest (right axis). The relationship matters more than either alone: volume up + OI up = new positions (conviction); volume up + OI down = liquidation (positions closing). <strong>Current read:</strong> The 6/24 volume spike (26,086) was followed by OI falling from 22,227 to 20,382 - the textbook liquidation signature; the crowd was exiting, not accumulating. <strong>Use:</strong> Until the amber line turns back up, treat every BTC bounce as short-covering relief rather than a new uptrend - size accordingly.</div>
+ </div>
+ <div class="commentary">
+ <strong>What this means <span class="badge b-inf">INFERENCE</span>:</strong> Volume spiking to 26,086 (6/24) while OI subsequently <em>fell</em> from 22,227 to 20,382 is the classic liquidation signature positions being closed, not opened. Combined with the 13.87bps execution friction (vs. sub-1bp on ES), this quantifies why the <a href="futures-setups.html">BTC setup</a> demands wider stops and smaller size: you pay ~14bps just to enter and exit a 5-lot, and the OI trend says the linear-futures crowd is de-risking, not accumulating. Bounces without OI rebuild are lower-conviction by construction.
+ </div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Source: CME Group Daily Information Bulletin #126 (Sections 01/01A/01B/01C/02A/02B/02C/74), equities-market-data-overview.pdf, cme-equity-sector-products-report.pdf. All dated 07/02/2026 unless noted. Re-verified 2026-07-04: all files byte-identical to prior pull (no new session market closed 07/03). Educational framework only.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8'; Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartComplex'), {
+ type:'bar',
+ data:{
+ labels:['Interest Rates','Equity Index','Energy','Comm/Alt Invst','FX','Metals'],
+ datasets:[
+ {label:'F&O Volume', data:[13957625,10590210,1974102,1560850,1105191,811794], backgroundColor:'#4da3ff'},
+ {label:'Open Interest (10)', data:[8490660,1088606,1619935,1033924,347841,199849], backgroundColor:'#39d6d6'}
+ ]
+ },
+ options:{ scales:{ y:{ ticks:{ callback:(v)=>(v/1e6).toFixed(0)+'M' } } } }
+});
+new Chart(document.getElementById('chartEqTrend'), {
+ type:'bar',
+ data:{
+ labels:['06/26','06/29','06/30','07/01','07/02'],
+ datasets:[
+ {label:'Futures Volume', data:[8423556,7754439,6332555,6914191,9240882], backgroundColor:'#4da3ff'},
+ {label:'Option Volume', data:[1303189,1247539,1424363,1261945,1349328], backgroundColor:'#0b2540'}
+ ]
+ },
+ options:{ scales:{ x:{stacked:true}, y:{stacked:true, ticks:{ callback:(v)=>(v/1e6).toFixed(1)+'M' } } } }
+});
+new Chart(document.getElementById('chartYoY'), {
+ type:'bar',
+ data:{
+ labels:['Micro NQ','Micro RTY','Micro BTC','MES','2Y Note','Micro Gold','ES','SOFR','10Y Note','Bitcoin (full)','COMEX Gold','WTI Crude'],
+ datasets:[{
+ label:'June 2026 Volume YoY %',
+ data:[149.3,146.1,52.6,45.9,43.7,39.1,31.5,23.5,21.0,-10.4,-19.7,-29.1],
+ backgroundColor:(ctx)=> ctx.raw>=0 ? '#28c76f' : '#ff4d5e'
+ }]
+ },
+ options:{ indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:{ ticks:{ callback:(v)=>v+'%' } } } }
+});
+new Chart(document.getElementById('chartBtcLiq'), {
+ type:'bar',
+ data:{
+ labels:['6/12','6/15','6/16','6/17','6/18','6/22','6/23','6/24','6/25','6/26'],
+ datasets:[
+ {type:'bar', label:'Daily Volume (contracts)', data:[9310,9985,6762,10883,17242,20807,18902,26086,21634,12519], backgroundColor:'#4da3ff', yAxisID:'y'},
+ {type:'line', label:'Open Interest', data:[21070,21135,21125,20661,20584,20202,20554,22227,20743,20382], borderColor:'#ffb020', tension:.2, yAxisID:'y1'}
+ ]
+ },
+ options:{ scales:{ y:{ position:'left', ticks:{ callback:(v)=>(v/1000).toFixed(0)+'k' } }, y1:{ position:'right', grid:{drawOnChartArea:false}, ticks:{ callback:(v)=>(v/1000).toFixed(1)+'k' } } } }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Source Ledger - Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html" class="active">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Source Ledger &amp; Snapshot Evidence</h1>
+ <div class="sub">Audit trail for raw inputs, derived calculations, source-access constraints, and local screenshot evidence. Refreshed 2026-07-06: CME/strategy pack re-downloaded (57 files OK), all cross-asset levels re-verified against a live market feed, and quant calculations re-run (VRP rebuilt on a proper daily history). Last completed trade date remains Thu 07/02.</div>
+</div>
+
+<section>
+ <h2>1. Executive Data Status</h2>
+ <div class="panel">
+ <div class="grid grid-4">
+ <div class="card"><div class="name">PDF Download Pass</div><div class="price">Active Pack</div><div class="note">CME/strategy PDFs remain archived locally. The old COT PDF source is retired from active COT refresh and replaced by Insider Week web sources.</div></div>
+ <div class="card"><div class="name">PDF Extraction Pass</div><div class="price">0 Blank</div><div class="note">0 blank-text PDFs and 0 extraction failures. Text extraction is a sanity check, not layout proof.</div></div>
+ <div class="card"><div class="name">Latest CME Data Window</div><div class="price">Jul 2, 2026</div><div class="note">Major CME overview reports show trade-date sequences through 07/02/2026. U.S. markets were closed 07/03 for the July 4 observed holiday.</div></div>
+ <div class="card"><div class="name">Live Gamma</div><div class="price">Blocked</div><div class="note">InsiderFinance page opens, but text-accessible payload returns No Data. Dashboard gamma is prior visible capture, not a fresh machine-validated live pull.</div></div>
+ </div>
+ <div class="commentary"><strong>Operational read:</strong> The PDF evidence stack is refreshed and usable. The limiting factor is publication cadence and JavaScript/paywall rendering. Treat CME, Insider Week, FactSet, Merrill, Ameriprise, and Briefing as dated-source facts. Treat gamma, intraday flow, and any gated Insider Week chart depth as manual-refresh inputs before live futures execution.</div>
+ <div class="commentary"><strong>Offline source catalog:</strong> The full attached Market Research bookmark inventory is stored at <a href="sources/source-catalog.md">sources/source-catalog.md</a>, with raw traceability at <a href="sources/market-research-bookmarks-pasted-text.txt">sources/market-research-bookmarks-pasted-text.txt</a>. Read that catalog before future source checks, refreshes, or offline downloads.</div>
+ </div>
+</section>
+
+<section>
+ <h2>2. Refreshed PDF Inventory - Active Archive</h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead><tr><th>Local File</th><th>Status</th><th>Bytes</th><th>Method</th><th>Pages</th><th>Extracted Date Tokens</th><th>Text Check</th></tr></thead>
+ <tbody>
+<tr><td><a href="cme_pdfs/bitcoin-futures-liquidity-report.pdf">bitcoin-futures-liquidity-report.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">146,462</td><td>BITS</td><td>1</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/cme-equity-sector-products-report.pdf">cme-equity-sector-products-report.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">124,548</td><td>BITS</td><td>1</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/daily-index-option-spread-activity.pdf">daily-index-option-spread-activity.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">70,484</td><td>BITS</td><td>1</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/earningsinsight.pdf">earningsinsight.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">1,211,228</td><td>BITS</td><td>36</td><td>July 2, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/equities-market-data-overview.pdf">equities-market-data-overview.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">278,538</td><td>BITS</td><td>10</td><td>07/02/2026; 07/01/2026; 06/30/2026; 06/29/2026; 06/26/2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/fx-report.pdf">fx-report.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">198,529</td><td>BITS</td><td>5</td><td>06/26/2026; 06/29/2026; 06/30/2026; 07/01/2026; 07/02/2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/me-cio-weekly-letter.pdf">me-cio-weekly-letter.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">299,609</td><td>BITS</td><td>8</td><td>June 29, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section01_Exchange_Overall_Volume_And_Open_Interest.pdf">Section01_Exchange_Overall_Volume_And_Open_Interest.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">66,851</td><td>BITS</td><td>1</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section01A_Summary_Volume_And_Open_Interest_AlT_Investment_Futures_And_Options.pdf">Section01A_Summary_Volume_And_Open_Interest_AlT_Investment_Futures_And_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">92,908</td><td>BITS</td><td>4</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section01B_Summary_Volume_And_Open_Interest_FX_Futures_And_Options.pdf">Section01B_Summary_Volume_And_Open_Interest_FX_Futures_And_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">98,980</td><td>BITS</td><td>5</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section01C_Summary_Volume_And_Open_Interest_Equity_Index_Futures_And_Options.pdf">Section01C_Summary_Volume_And_Open_Interest_Equity_Index_Futures_And_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">111,485</td><td>BITS</td><td>7</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section02A_Summary_Volume_And_Open_Interest_Int_Rates_Futures_And_Options.pdf">Section02A_Summary_Volume_And_Open_Interest_Int_Rates_Futures_And_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">87,185</td><td>BITS</td><td>3</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf">Section02B_Summary_Volume_And_Open_Interest_Metals_Futures_And_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">91,011</td><td>BITS</td><td>4</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section02C_Summary_Volume_And_Open_Interest_Energy_Futures_And_Options.pdf">Section02C_Summary_Volume_And_Open_Interest_Energy_Futures_And_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">102,089</td><td>BITS</td><td>6</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section11_Equity_And_Index_Futures.pdf">Section11_Equity_And_Index_Futures.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">67,193</td><td>BITS</td><td>1</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section12_Equity_And_Index_Futures_Continued.pdf">Section12_Equity_And_Index_Futures_Continued.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">99,537</td><td>BITS</td><td>7</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section40_Nasdaq_100_And_E_Mini_Nasdaq_100_Options.pdf">Section40_Nasdaq_100_And_E_Mini_Nasdaq_100_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">947,345</td><td>BITS</td><td>52</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section44_Nikkei_225_Options.pdf">Section44_Nikkei_225_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">130,785</td><td>BITS</td><td>13</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section45_Equity_Flex_Options.pdf">Section45_Equity_Flex_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">84,026</td><td>BITS</td><td>4</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section47_E_Mini_S_And_P_500_Call_Options.pdf">Section47_E_Mini_S_And_P_500_Call_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">750,213</td><td>BITS</td><td>35</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section48_E_Mini_S_And_P_500_Put_Options.pdf">Section48_E_Mini_S_And_P_500_Put_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">1,147,115</td><td>BITS</td><td>59</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section49_S_And_P_500_Call_Options.pdf">Section49_S_And_P_500_Call_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">81,217</td><td>BITS</td><td>2</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section50_S_And_P_500_Put_Options.pdf">Section50_S_And_P_500_Put_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">76,789</td><td>BITS</td><td>2</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section55_S_And_P_Midcap_S_And_P_SmallCap600_Citigroup_Growth_Citigroup_Value_Options.pdf">Section55_S_And_P_Midcap_S_And_P_SmallCap600_Citigroup_Growth_Citigroup_Value_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">96,624</td><td>BITS</td><td>6</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section60_BigDJIAMini_DOW_Options.pdf">Section60_BigDJIAMini_DOW_Options.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">79,672</td><td>BITS</td><td>2</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section61_Energy_Futures_Products.pdf">Section61_Energy_Futures_Products.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">268,547</td><td>BITS</td><td>46</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section62_Metals_Futures_Products.pdf">Section62_Metals_Futures_Products.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">105,138</td><td>BITS</td><td>9</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section63_Energy_Options_Products.pdf">Section63_Energy_Options_Products.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">1,031,805</td><td>BITS</td><td>150</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section64_Metals_Option_Products.pdf">Section64_Metals_Option_Products.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">833,329</td><td>BITS</td><td>64</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Section74_Cryptocurrency.pdf">Section74_Cryptocurrency.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">84,036</td><td>BITS</td><td>4</td><td>Jul 02, 2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/sofr-market-overview-report.pdf">sofr-market-overview-report.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">183,098</td><td>BITS</td><td>6</td><td>07/02/2026; 07/01/2026; 06/30/2026; 06/29/2026; 06/26/2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/top-nymex-crude-oil-options-daily-market-update.pdf">top-nymex-crude-oil-options-daily-market-update.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">281,900</td><td>BITS</td><td>6</td><td>02/07/2026; 06/26/2026; 06/29/2026; 06/30/2026; 07/01/2026; 07/02/2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/treasury-market-overview-report.pdf">treasury-market-overview-report.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">251,497</td><td>BITS</td><td>7</td><td>06/26/2026; 06/29/2026; 06/30/2026; 07/01/2026; 07/02/2026</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_ADV_Report_CBOT.pdf">Web_ADV_Report_CBOT.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">92,288</td><td>BITS</td><td>4</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_ADV_Report_CME.pdf">Web_ADV_Report_CME.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">144,624</td><td>BITS</td><td>9</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_ADV_Report_CMEG.pdf">Web_ADV_Report_CMEG.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">222,134</td><td>BITS</td><td>16</td><td>April 15, 2013</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_ADV_Report_NYMEX_COMEX.pdf">Web_ADV_Report_NYMEX_COMEX.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">190,460</td><td>BITS</td><td>16</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_OI_Report_CBOT.pdf">Web_OI_Report_CBOT.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">84,769</td><td>BITS</td><td>4</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_OI_Report_CME.pdf">Web_OI_Report_CME.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">123,422</td><td>BITS</td><td>9</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_OI_Report_CMEG.pdf">Web_OI_Report_CMEG.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">184,986</td><td>BITS</td><td>17</td><td>April 15, 2013</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_OI_Report_NYMEX_COMEX.pdf">Web_OI_Report_NYMEX_COMEX.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">157,413</td><td>BITS</td><td>12</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_Volume_Comparison_CBOT.pdf">Web_Volume_Comparison_CBOT.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">103,018</td><td>BITS</td><td>5</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_Volume_Comparison_CME.pdf">Web_Volume_Comparison_CME.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">173,505</td><td>BITS</td><td>13</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_Volume_Comparison_CMEG.pdf">Web_Volume_Comparison_CMEG.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">279,415</td><td>BITS</td><td>23</td><td>April 15, 2013</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_Volume_Comparison_NYMEX_COMEX.pdf">Web_Volume_Comparison_NYMEX_COMEX.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">290,784</td><td>BITS</td><td>18</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_Volume_Report_CBOT.pdf">Web_Volume_Report_CBOT.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">93,981</td><td>BITS</td><td>4</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_Volume_Report_CME.pdf">Web_Volume_Report_CME.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">152,175</td><td>BITS</td><td>10</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_Volume_Report_CMEG.pdf">Web_Volume_Report_CMEG.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">232,734</td><td>BITS</td><td>17</td><td>April 15, 2013</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/Web_Volume_Report_NYMEX_COMEX.pdf">Web_Volume_Report_NYMEX_COMEX.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">199,843</td><td>BITS</td><td>17</td><td>No explicit date token extracted</td><td>PDF text: ok</td></tr>
+<tr><td><a href="cme_pdfs/weeklymarketperspectives.pdf">weeklymarketperspectives.pdf</a></td><td><span class="badge b-fact">updated</span><br>local OK</td><td class="num">516,140</td><td>BITS</td><td>5</td><td>June 15, 2026</td><td>PDF text: ok</td></tr>
+ </tbody>
+ </table>
+ </div>
+</section>
+
+<section>
+ <h2>3. Web Source Ledger</h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead><tr><th>Source</th><th>Observed Date / Status</th><th>Dashboard Use</th><th>Freshness Judgment</th></tr></thead>
+ <tbody>
+ <tr><td>Briefing.com Stock Market Update</td><td>Last Updated: 02-Jul-26 16:30 ET</td><td>Market snapshot, sector winners/losers, rotational tape read.</td><td><span class="badge b-neu">VISIBLE AFTER COOKIE ACCEPTANCE</span> Rendered in browser after cookie acceptance.</td></tr>
+ <tr><td>Briefing.com Weekly Wrap / After Hours</td><td>Last Updated: 02-Jul-26 17:11 ET</td><td>Weekly index performance, sector rotation, after-hours recap.</td><td><span class="badge b-neu">VISIBLE AFTER COOKIE ACCEPTANCE</span> Last full weekly narrative, not live tape.</td></tr>
+ <tr><td>Briefing.com Bond Market Update</td><td>02-Jul-26 14:42 ET</td><td>Treasury curve pressure, yield checks, FX overlay.</td><td><span class="badge b-neu">VISIBLE AFTER COOKIE ACCEPTANCE</span> More recent than stock recap but not current-session data.</td></tr>
+ <tr><td>Briefing.com Economic Calendar</td><td>Last Updated: 03-Jul-26 00:06 ET</td><td>Upcoming macro catalysts: ISM Services, trade balance, CPI, PPI, claims, housing.</td><td><span class="badge b-fact">VISIBLE</span> Calendar rows updated with date caveat.</td></tr>
+ <tr><td>FactSet Earnings Insight</td><td>PDF dated July 2, 2026; 36 pages</td><td>Q2 EPS growth, revenue growth, P/E, profit margins, guidance breadth.</td><td><span class="badge b-fact">FRESH PDF</span> Downloaded and extracted successfully.</td></tr>
+ <tr><td>Live cross-asset market feed (FMP)</td><td>Pulled 2026-07-06; indexes = 07/02 closes, futures/VIX/commodities/crypto/FX = live Monday globex/spot</td><td>Verify every stored level (indexes, curve, VIX, commodities, FX, BTC); source the rebuilt realized-vol/VRP calculation; live 07/06 overlay on Home/Setups/FX.</td><td><span class="badge b-fact">LIVE / VERIFIED</span> Internally consistent with the dashboard's price universe; used to re-verify and to compute RV/VRP.</td></tr>
+ <tr><td>CME Group Daily Bulletin PDFs</td><td>Re-downloaded 2026-07-06; core trade date through 07/02/2026 (byte-identical — markets closed 07/03)</td><td>Volume, open interest, strike tables, futures/options structure.</td><td><span class="badge b-fact">FRESH DOWNLOAD</span> Source data reflects latest available bulletin window, not July 4 or July 6 trading.</td></tr>
+ <tr><td>CME Monthly Volume / ADV / OI PDFs</td><td>Re-downloaded 2026-07-06</td><td>Monthly participation, retail micro-contract crowding, exchange-level activity.</td><td><span class="badge b-fact">FRESH DOWNLOAD</span> Byte-identical to prior pull.</td></tr>
+ <tr><td>CFTC Commitment of Traders (independent cross-check)</td><td>Report week 2026-06-23 (latest published); confirms Insider Week 06/26 window</td><td>Cross-validate S&amp;P E-mini commercial/spec/small-trader nets on the <a href="cot.html">COT page</a>.</td><td><span class="badge b-fact">VERIFIED MATCH</span> ES commercial −87,130 / large-spec −35,448 / small-trader +122,578 match exactly. Next print 07/06 pm.</td></tr>
+ <tr><td>CME Bitcoin Futures Liquidity Report</td><td>Based on data from 22-Jun-2026 to 26-Jun-2026</td><td>Crypto futures depth, spread friction, liquidation/OI context.</td><td><span class="badge b-fact">FRESH DOWNLOAD / DATED DATA</span></td></tr>
+ <tr><td>Insider Week COT table</td><td>Week to 2026-06-26; public page warns next release delayed to 2026-07-06</td><td>Commercials, large speculators, small traders, open interest, 26-week extremes, and Commercial COT Index.</td><td><span class="badge b-fact">ACTIVE COT SOURCE</span> Replaces old direct-report/PDF dashboard source path.</td></tr>
+ <tr><td>Insider Week Smart Money Heatmap</td><td>Latest visible row 2026-06-26 with weekly history back to 2026-04-10</td><td>26-week Commercial COT Index heatmap for S&amp;P 500, Nasdaq, Russell, Dow E-mini and broader futures markets.</td><td><span class="badge b-fact">ACTIVE COT SOURCE</span> Public rows visible; full historical depth may require login.</td></tr>
+ <tr><td>Insider Week index-specific pages</td><td>S&amp;P 500, Nasdaq E-mini, Russell 2000, Dow E-mini pages checked 2026-07-05</td><td>Visible AI probability and next-week directional text used as positioning overlay.</td><td><span class="badge b-neu">VISIBLE / PARTLY GATED</span> Use visible text only unless logged in.</td></tr>
+ <tr><td>Merrill CIO Weekly Letter</td><td>PDF dated June 29, 2026; 8 pages</td><td>Structural macro regime and portfolio stance.</td><td><span class="badge b-fact">FRESH DOWNLOAD / SAME EDITION</span></td></tr>
+ <tr><td>Ameriprise Weekly Market Perspectives</td><td>PDF dated June 15, 2026; 5 pages</td><td>Policy and asset allocation tone.</td><td><span class="badge b-neu">STALE BY PUBLICATION</span> Keep as background only.</td></tr>
+ <tr><td>Barron's Market Lab / Markets Diary</td><td>Stored dashboard snapshot dated 2026-07-02; live fetch may render as Loading</td><td>Dedicated Market Lab page: index closes, NYSE/Nasdaq breadth, new highs/lows, sentiment, reaction scores.</td><td><span class="badge b-neu">DYNAMIC / DATE REQUIRED</span> Use pure.md or browser capture when text mode is incomplete; never use without displayed date.</td></tr>
+ <tr><td>GuruFocus U.S. Market Newsletter + indicator pages</td><td>Newsletter dated 2026-07-04; linked indicators range 2026-05 to 2026-07 depending on field</td><td>Dedicated GuruFocus page: GF Value premiums, Buffett Indicator, Shiller CAPE, yield curve, labor, inflation, GDP, policy-rate context.</td><td><span class="badge b-fact">VISIBLE / DATED</span> Use as valuation and macro-regime overlay, not live execution data.</td></tr>
+ <tr><td>Edward Jones Daily Market Recap</td><td>Visible accessible text includes Thursday 6/25/2026 p.m.</td><td>Retail strategy tone, Fed/oil/dollar framing.</td><td><span class="badge b-neu">STALE / ACCESS-LIMITED</span></td></tr>
+ <tr><td>InsiderFinance SPX Gamma</td><td>Rendered in browser; screenshot captured</td><td>Net GEX, call wall, put wall, zero gamma, squeeze filter.</td><td><span class="badge b-bear">VISIBLE SNAPSHOT</span> Snapshot captured; live manual verification still required before trading.</td></tr>
+ </tbody>
+ </table>
+ </div>
+</section>
+
+<section>
+  <h2>4. Source Snapshot Inventory <span class="count">snapshot evidence</span></h2>
+  <div class="panel tablewrap">
+    <table>
+      <thead><tr><th>Source</th><th>Local Snapshot</th><th>Visible Date / Projection</th><th>Status</th><th>Browser Title</th></tr></thead>
+      <tbody>
+<tr><td>InsiderFinance SPX Gamma</td><td><a href="snapshots/insiderfinance-spx-gamma.png">insiderfinance-spx-gamma.png</a></td><td>Visible render captured</td><td><span class="badge b-fact">ok</span></td><td>SPX Gamma Exposure (GEX) | InsiderFinance</td></tr>
+<tr><td>Briefing Stock Market Update</td><td><a href="snapshots/briefing-stock-market-update.png">briefing-stock-market-update.png</a></td><td>Last Updated: 02-Jul-26 16:30 ET | Archive</td><td><span class="badge b-fact">ok</span></td><td>Stock Market Update | Latest Stock Market News and Updates | Briefing.com</td></tr>
+<tr><td>Briefing Weekly Wrap</td><td><a href="snapshots/briefing-weekly-wrap.png">briefing-weekly-wrap.png</a></td><td>Last Updated: 02-Jul-26 17:11 ET | Archive</td><td><span class="badge b-fact">ok</span></td><td>Weekly Wrap | Stock Market Week in Review</td></tr>
+<tr><td>Briefing After Hours Report</td><td><a href="snapshots/briefing-after-hours-report.png">briefing-after-hours-report.png</a></td><td>Last Updated: 02-Jul-26 17:11 ET | Archive</td><td><span class="badge b-fact">ok</span></td><td>After Hours Report | After Hours Earnings Today</td></tr>
+<tr><td>Briefing Bond Market Update</td><td><a href="snapshots/briefing-bond-market-update.png">briefing-bond-market-update.png</a></td><td>Last Updated: 02-Jul-26 14:42 ET | Archive</td><td><span class="badge b-fact">ok</span></td><td>Bond Market Update | Bond Market News Today</td></tr>
+<tr><td>Briefing Economic Calendar</td><td><a href="snapshots/briefing-economic-calendar.png">briefing-economic-calendar.png</a></td><td>Last Updated: 03-Jul-26 00:06 ET</td><td><span class="badge b-fact">ok</span></td><td>US Economic Calendar</td></tr>
+<tr><td>Barchart SPX Cheat Sheet</td><td><a href="snapshots/barchart-spx-cheat-sheet.png">barchart-spx-cheat-sheet.png</a></td><td>Projection Effective Date: Jul 6th, 2026</td><td><span class="badge b-fact">ok</span></td><td>S&amp;P 500 Index Trader&#39;s Cheat Sheet - Barchart.com</td></tr>
+<tr><td>Barchart Nasdaq 100 IUXX Cheat Sheet</td><td><a href="snapshots/barchart-iuxx-cheat-sheet.png">barchart-iuxx-cheat-sheet.png</a></td><td>Projection Effective Date: Jul 3rd, 2026</td><td><span class="badge b-fact">ok</span></td><td>Nasdaq 100 Index Trader&#39;s Cheat Sheet - Barchart.com</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="commentary"><strong>Operational note:</strong> screenshots prove visible page state at capture time. Use the JSON metadata for dates and extracted tables. InsiderFinance renders gamma values but may show an account overlay; Barchart renders extractable support/resistance tables; Briefing pages render once cookies are accepted.</div>
+</section>
+
+<section>
+ <h2>5. Trade-Desk Freshness Rules</h2>
+ <div class="panel">
+ <div class="grid grid-2">
+ <div class="card"><div class="name">FACT</div><div class="note">A value shown directly from a named source, refreshed PDF, or visible web entry.</div></div>
+ <div class="card"><div class="name">INFERENCE</div><div class="note">A desk interpretation derived from multiple facts. Useful for regime mapping, never raw data.</div></div>
+ <div class="card"><div class="name">STALE RISK</div><div class="note">Gamma, 0DTE options flow, live index levels, FX spot, and crude levels require same-session refresh before active futures execution.</div></div>
+ <div class="card"><div class="name">EXECUTION RULE</div><div class="note">When freshness is uncertain, trade smaller, widen confirmation, and avoid using stale levels as exact stop or breakout triggers.</div></div>
+ </div>
+ <div class="commentary"><strong>Dashboard interpretation:</strong> refreshed PDFs support strategic and tactical regime analysis. They do not replace live order-book validation. Correct retail futures workflow: use the dashboard to identify regime and crowding, then require live price confirmation at support/resistance before entry.</div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Source ledger refreshed 2026-07-06 (live-feed re-verification + VRP rebuild; CME pack byte-identical to 07/02). Educational framework only. Futures trading involves substantial risk of loss.</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

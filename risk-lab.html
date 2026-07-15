@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Risk Lab - Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<style>
+.risk-form{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:end}
+.risk-form label{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:4px}
+.risk-form input,.risk-form select{width:100%;background:var(--panel);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:10px;font-size:13px}
+.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+@media (max-width:1100px){.risk-form,.result-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.risk-form,.result-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html" class="active">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Executive Risk Lab</h1>
+ <div class="sub">Merged Volatility Regime and Executive Risk Lab page. Use it to translate volatility evidence, event risk, macro conviction, and futures stop distance into contract count, notional discipline, and invalidation-based capital preservation.</div>
+</div>
+
+<section id="volatility">
+ <h2>1. Volatility Regime <span class="count">VIX compression, gamma, and put-skew risk</span></h2>
+ <div class="panel">
+ <div class="grid grid-3">
+ <div class="card"><div class="name">VIX</div><div class="price">16.34</div><div class="note">Live 07/06 (07/02 close 15.81); still below 50D (17.63) and 200D (18.67), but firming into the data week off the 13.38 52-wk low.</div></div>
+ <div class="card"><div class="name">Dealer Gamma Regime</div><div class="price">+$33.1B</div><div class="note">Long gamma, see <a href="gamma.html">Gamma</a>, mechanically compresses realized volatility (level needs a fresh capture).</div></div>
+ <div class="card"><div class="name">Options Put Skew</div><div class="price">60-72%</div><div class="note">Put share across S&amp;P, E-mini S&amp;P, and Russell options across all 5 tracked sessions, see <a href="options.html">Options Activity</a>.</div></div>
+ </div>
+ <div class="commentary">
+ <strong>VIX 15.81 close &rarr; 16.34 live <span class="badge b-fact">FACT</span>:</strong> still a low-vol regime by historical comparison, but the premium is <em>no longer cheap versus what the index is actually delivering</em> — see the rebuilt VRP below.
+ <br><br><strong>The divergence that matters <span class="badge b-inf">INFERENCE</span>:</strong> on 07/02 the VIX stayed sub-16 while the Nasdaq-100 fell -1.61% and the Dow rose +1.14% — enormous <em>cross-sectional</em> dispersion (Tech -2.9% vs Healthcare +2.6%) masked by a placid index-level gauge. The long-gamma dealer regime on the <a href="gamma.html">SPX Gamma</a> page explains the index-level compression: dealers sell rallies and buy dips inside the key SPX range, damping S&amp;P realized vol even as sector rotation rages underneath.
+ <br><br><strong>But options positioning tells a different story than VIX:</strong> put volume has led call volume in every tracked session across S&amp;P 500, E-mini S&amp;P, and Russell 2000 options. Compressed VIX plus persistent put buying is the signature of a market paying for insurance ahead of a catalyst (CPI 07/14) instead of after one.
+ <br><br><strong>Risk-lab implication:</strong> with realized vol now measured properly at 12–15% (below), convex hedges into CPI are close to <em>fairly</em> priced rather than expensive — owning defined-risk convexity is more justified than the previous version of this page implied, while blanket premium-selling has lost most of its edge.
+ </div>
+ </div>
+</section>
+
+<section id="vrp">
+ <h2>2. Volatility Risk Premium <span class="count">implied vs. realized, skill-derived estimate</span></h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">
+ <strong>Methodology (rebuilt 2026-07-06):</strong> volatility risk premium is the premium of implied over realized: <code>VRP = IV - RV</code>. Realized volatility is now computed close-to-close from a proper daily S&amp;P 500 price history (FMP feed) rather than the earlier six hand-entered moves: sample stdev of log returns &times; &radic;252. Two windows: <strong>10-day RV = 12.3%</strong> (&sigma;&asymp;0.77%/day, last two calmer weeks) and <strong>~4-week RV = 15.4%</strong> (&sigma;&asymp;0.97%/day, 18 obs, includes the late-June chop and the 07/02 rotation). Implied side uses VIX 15.81 (07/02 close) / 16.34 (live 07/06). <span class="badge b-inf">CORRECTION</span> — the prior page reported RV &asymp; 8.5% from a 6-observation window during the market's calmest stretch, which overstated VRP badly; the wider, properly sampled windows are the honest measure.
+ </div>
+ <div class="chartbox" style="margin-top:12px;">
+ <h3>Implied vs. Realized Volatility (annualized %)</h3>
+ <div class="chart-canvas-wrap short"><canvas id="chartVRP"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> bars compare what the market is paying for future volatility (VIX) against what the index has actually delivered (realized) over two windows, with the VIX 50D average as regime context. The gap between an RV bar and the VIX bar is the volatility risk premium. <strong>Current read:</strong> VIX 15.81 vs 10-day RV 12.3% = VRP <strong>+3.6 pts</strong> (near the ~4pt long-run S&amp;P norm); vs 4-week RV 15.4% = VRP <strong>+0.4 pts</strong> (below norm). Either way the premium is roughly <em>fair</em>, not the "+7.3 rich" this page previously showed. <strong>Use:</strong> the generic edge in selling S&amp;P premium has largely closed; owning targeted convexity across the Jul 14 CPI / Jul 15 PPI window is close to fairly priced and preferable to blanket premium-selling — especially with VIX ticking up to 16.3 live.</div>
+ </div>
+ <div class="tablewrap" style="margin-top:12px;">
+ <table>
+ <thead><tr><th>Window</th><th>Realized Vol</th><th>Implied (VIX)</th><th>VRP (IV-RV)</th><th>Signal</th></tr></thead>
+ <tbody>
+ <tr><td>10-day close-to-close (10 obs)</td><td class="num">12.3%</td><td class="num">15.81%</td><td class="num up">+3.6 pts</td><td><span class="badge b-neu">≈ FAIR — near the ~4pt long-run norm</span></td></tr>
+ <tr><td>~4-week close-to-close (18 obs)</td><td class="num">15.4%</td><td class="num">15.81%</td><td class="num">+0.4 pts</td><td><span class="badge b-neu">SLIGHTLY CHEAP — implied barely above delivered</span></td></tr>
+ <tr><td>Live 07/06</td><td class="num">15.4% (4wk)</td><td class="num">16.34%</td><td class="num up">+1.0 pt</td><td>VIX firming into CPI narrows the gap from the cheap side.</td></tr>
+ <tr><td>Regime context</td><td class="num">-</td><td class="num">50D 17.63 / 200D 18.67</td><td class="num">-</td><td>Spot VIX below both averages: low-vol regime, but premium vs realized is now thin.</td></tr>
+ <tr><td>60d / 90d windows</td><td class="num" colspan="4">Disclosed gap — history feed now supplies ~30 daily closes; 60/90-day windows still need a longer series to be robust.</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>What changed and why it matters <span class="badge b-inf">INFERENCE</span>:</strong> the earlier page argued options were "rich vs realized" because dealer long-gamma was crushing realized vol. With realized measured over a full month — capturing the late-June selloff and the 07/02 rotation — delivered vol is actually running 12–15%, right up against implied. So VRP is fair-to-thin, not fat. The practical consequence: this desk should stop treating premium-selling as a free carry trade here and instead lean on <em>defined-risk directional</em> expressions (long YM / short-or-hedged NQ per the <a href="playbook.html">playbook</a>) with convexity owned through the CPI window. If the gamma regime breaks post-CPI, realized snaps higher and even today's thin premium proves too cheap — which is exactly when owned convexity pays.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>3. Futures Position Sizing Calculator</h2>
+ <div class="panel">
+ <div class="risk-form">
+ <div><label for="equity">Account Equity ($)</label><input id="equity" type="number" value="50000" min="0" step="100"></div>
+ <div><label for="riskPct">Risk Budget (%)</label><input id="riskPct" type="number" value="1" min="0" step="0.1"></div>
+ <div><label for="contract">Contract</label><select id="contract"></select></div>
+ <div><label for="stopPts">Stop Distance (points)</label><input id="stopPts" type="number" value="50" min="0" step="0.25"></div>
+ <div><label for="pointValue">Point Value ($)</label><input id="pointValue" type="number" value="5" min="0" step="0.01"></div>
+ </div>
+ <div class="result-grid">
+ <div class="card"><div class="name">Dollar Risk Budget</div><div class="price" id="riskBudget">$500</div><div class="note">Account equity times risk percentage.</div></div>
+ <div class="card"><div class="name">Risk Per Contract</div><div class="price" id="riskPerContract">$250</div><div class="note">Stop distance times point value.</div></div>
+ <div class="card"><div class="name">Max Contracts</div><div class="price" id="contracts">2</div><div class="note">Rounded down to preserve the risk limit.</div></div>
+ <div class="card"><div class="name">Unused Risk Buffer</div><div class="price" id="buffer">$0</div><div class="note">Capital not consumed after integer contract sizing.</div></div>
+ </div>
+ <div class="commentary">
+ <strong>Risk discipline:</strong> This calculator uses the futures rule that dollar risk equals stop distance times point value times contract count. Margin is not maximum loss. Verify live tick value, margin, and contract details with the broker/exchange before execution.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>4. Executive Risk Matrix</h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead><tr><th>Risk Channel</th><th>Current Signal</th><th>Portfolio Action</th><th>Invalidation Boundary</th></tr></thead>
+ <tbody>
+ <tr><td>Rates Shock</td><td>Bear-steepening curve; 10Y near 4.50% risk switch</td><td>Reduce NQ/RTY gross exposure first</td><td>10Y reversal below 4.35%-4.40%</td></tr>
+ <tr><td>Gamma Flip</td><td>Long gamma regime, zero gamma requires refresh</td><td>Avoid precision ES sizing around stale flip level</td><td>Refreshed SPX below zero gamma</td></tr>
+ <tr><td>Retail Crowding</td><td>MNQ and M2K micro volume impulses above +140% YoY</td><td>Use pullback confirmation; avoid emotional chase</td><td>Failed reclaim after resistance test</td></tr>
+ <tr><td>Crypto Liquidity</td><td>BTC futures 5-contract bid/ask friction 13.87 bps</td><td>Use smaller size and limit orders</td><td>OI keeps falling while price bounces</td></tr>
+ <tr><td>Event Risk</td><td>Heavy data week: ISM Services (07/06), FOMC Minutes (07/08), <strong>CPI 07/14 (3.9% YoY exp, from 4.2%)</strong>, PPI 07/15 (0.8% exp)</td><td>Cut gross exposure into catalysts if price is extended; own convexity through CPI</td><td>Post-event break of support or resistance</td></tr>
+ </tbody>
+ </table>
+ </div>
+</section>
+
+<section>
+ <h2>5. Desk-Level Exposure Limits</h2>
+ <div class="panel">
+ <div class="grid grid-4">
+ <div class="card"><div class="name">Single Trade Risk</div><div class="price">0.50%-1.00%</div><div class="note">Normal tactical futures risk per idea.</div></div>
+ <div class="card"><div class="name">Event Week Risk</div><div class="price">Half Size</div><div class="note">Reduce before CPI, PPI, payrolls, FOMC, or earnings clusters.</div></div>
+ <div class="card"><div class="name">Correlated Beta</div><div class="price">Aggregate</div><div class="note">ES, NQ, YM, and RTY are not independent bets during shocks.</div></div>
+ <div class="card"><div class="name">Stop Discipline</div><div class="price">No Averaging</div><div class="note">Breached invalidation means thesis review, not automatic add.</div></div>
+ </div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Executive Risk Lab merges the former Volatility Regime page with futures-risk translation, volatility sizing, event-risk handling, and portfolio exposure discipline. VRP recomputed 2026-07-06 on a proper ~4-week daily S&amp;P history (RV 12–15%, VRP fair-to-thin), correcting the earlier 6-observation ~8.5% estimate. Educational framework only.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8'; Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartVRP'), {
+ type:'bar',
+ data:{
+ labels:['Realized 10d','Realized 4wk','VIX (implied)','VIX 50D avg'],
+ datasets:[{ label:'Annualized vol %', data:[12.26,15.37,15.81,17.63], backgroundColor:['#39d6d6','#2fb0b0','#ffb020','#5b6577'] }]
+ },
+ options:{ plugins:{legend:{display:false}}, scales:{ y:{ min:0, max:22, ticks:{ callback:(v)=>v+'%' } } } }
+});
+const presets = {
+ "MES - Micro E-mini S&P 500": 5,
+ "MNQ - Micro E-mini Nasdaq-100": 2,
+ "MYM - Micro Dow": 0.5,
+ "M2K - Micro Russell 2000": 5,
+ "Custom": 5
+};
+const contract = document.getElementById("contract");
+Object.keys(presets).forEach((name) => {
+ const option = document.createElement("option");
+ option.value = name;
+ option.textContent = name;
+ contract.appendChild(option);
+});
+function money(value){return "$" + Math.round(value).toLocaleString();}
+function recalc(){
+ const equity = Number(document.getElementById("equity").value || 0);
+ const riskPct = Number(document.getElementById("riskPct").value || 0) / 100;
+ const stopPts = Number(document.getElementById("stopPts").value || 0);
+ const pointValue = Number(document.getElementById("pointValue").value || 0);
+ const budget = equity * riskPct;
+ const per = stopPts * pointValue;
+ const count = per > 0 ? Math.floor(budget / per) : 0;
+ document.getElementById("riskBudget").textContent = money(budget);
+ document.getElementById("riskPerContract").textContent = money(per);
+ document.getElementById("contracts").textContent = String(Math.max(0, count));
+ document.getElementById("buffer").textContent = money(Math.max(0, budget - count * per));
+}
+contract.addEventListener("change", () => {
+ document.getElementById("pointValue").value = presets[contract.value];
+ recalc();
+});
+["equity","riskPct","stopPts","pointValue"].forEach((id) => document.getElementById(id).addEventListener("input", recalc));
+contract.value = "MES - Micro E-mini S&P 500";
+recalc();
+</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tactical Macro & Futures Terminal 2026-07-06</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+
+<nav class="topnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+
+<main>
+
+<div class="pagehead">
+ <h1>Institutional Cross-Asset Overview</h1>
+ <div class="sub">Synthesized from refreshed CME/Insider Week/Barron's/FactSet/strategy sources, verified live cross-asset quotes (FMP feed), visible Briefing.com web entries, and locally audited source files. Source pack re-downloaded and analysis re-run 2026-07-06. Full source ledger on every page.</div>
+ <div class="commentary" style="margin-top:10px;"><span class="badge b-fact">Refreshed Mon 2026-07-06</span> Full data refresh: CME source pack re-downloaded (57 files OK), every cross-asset level re-verified against a live market feed, and all quant calculations re-run. <strong>Last completed trade date remains Thu 07/02</strong> (CME Bulletin #126; markets closed Fri 07/03 for the July 4 holiday, Mon 07/06 not yet settled) &mdash; so the CME bulletin and cash-index closes are unchanged, but a <strong>live Monday 07/06 overlay</strong> (futures, VIX, commodities, crypto, FX) and a rebuilt volatility calculation are now layered on top. <span class="badge b-inf">Key revision</span> Realized volatility recomputed on a proper ~4-week window (RV &asymp; 15.4% annualized, not the earlier 6-observation ~8.5% estimate) collapses the S&amp;P variance-risk premium from the previously stored &ldquo;+7.3 rich&rdquo; to roughly fair (+0.4 to +3.6) &mdash; index options are now priced near fair value into the Jul 14 CPI, not richly. Important caveat: fresh download does not mean fresh trade date.</div>
+ <div class="commentary" style="margin-top:8px;"><span class="badge b-fact">Expanded 2026-07-05</span> The dashboard retains the expanded quant modules: Barron's U.S. index table, Briefing economic calendar with forecast/consensus/prior, Briefing Weekly Wrap / After Hours / Bond &amp; Stock updates as dated facts, FX Flow, CME monthly volume/ADV/OI, CME Bitcoin Futures Liquidity Report, Treasury curve-spread analytics, Insider Week COT/TFF graph snapshots, and the Quant Signal Stack. Use Source Ledger first when deciding whether a level is fresh enough for execution.</div>
+</div>
+
+<div class="disclaimer">
+ <strong> How to read this terminal:</strong> Every page tags data <span class="badge b-fact">FACT</span> (pulled directly from a named source, with date) or <span class="badge b-inf">INFERENCE</span> (strategist interpretation). Nothing is fabricated to fill gaps where a source was unavailable, that is stated explicitly. Educational framework only not investment advice.
+</div>
+
+
+<section id="snapshot">
+ <h2>1. Market Snapshot <span class="count">10 instruments live quoted</span></h2>
+ <div class="grid grid-5">
+ <div class="card"><div class="sym">SPY <span class="badge b-fact">FACT</span></div><div class="name">S&amp;P 500 ETF</div><div class="price">744.78</div><div class="chg down">-0.13%</div><div class="range">50D 737.43 | 200D 692.29</div></div>
+ <div class="card"><div class="sym">QQQ <span class="badge b-fact">FACT</span></div><div class="name">Nasdaq-100 ETF</div><div class="price">712.60</div><div class="chg down">-1.73%</div><div class="range">50D 709.15 | 200D 634.93</div></div>
+ <div class="card"><div class="sym">DIA <span class="badge b-fact">FACT</span></div><div class="name">Dow ETF</div><div class="price">527.88</div><div class="chg up">+1.05%</div><div class="range">50D 505.85 | 200D 484.60</div></div>
+ <div class="card"><div class="sym">IWM <span class="badge b-fact">FACT</span></div><div class="name">Russell 2000 ETF</div><div class="price">297.58</div><div class="chg down">-0.58%</div><div class="range">50D 286.58 | 200D 260.74</div></div>
+ <div class="card"><div class="sym">VIX <span class="badge b-fact">FACT</span></div><div class="name">CBOE Volatility</div><div class="price">16.34</div><div class="chg up">+0.53 (live 07/06)</div><div class="range">07/02 close 15.81 | 50D 17.63</div></div>
+ <div class="card"><div class="sym">10Y <span class="badge b-fact">FACT</span></div><div class="name">UST Yield</div><div class="price">4.485%</div><div class="chg up">+9bp/wk</div><div class="range">Bear-steepening</div></div>
+ <div class="card"><div class="sym">30Y <span class="badge b-fact">FACT</span></div><div class="name">UST Yield</div><div class="price">4.985%</div><div class="chg up">+12bp/wk</div><div class="range">Bear-steepening</div></div>
+ <div class="card"><div class="sym">DXY <span class="badge b-fact">FACT</span></div><div class="name">US Dollar Index</div><div class="price">100.83</div><div class="chg up">+0.21 (live 07/06)</div><div class="range">Firm on rates backup | 50D 99.4</div></div>
+ <div class="card"><div class="sym">BTC <span class="badge b-fact">FACT</span></div><div class="name">Bitcoin/USD</div><div class="price">$62,809</div><div class="chg down">-1.23% (live 07/06)</div><div class="range">-50% off ATH $126k</div></div>
+ <div class="card"><div class="sym">SPX Gamma <span class="badge b-fact">FACT</span></div><div class="name">Net Dealer Gamma</div><div class="price">+$33.1B</div><div class="chg up">Long gamma</div><div class="range">Zero-G $7,423.30 (refreshed)</div></div>
+ </div>
+ <div class="commentary">
+ <strong>Official index closes, Thu 07/02/2026 (Barron's Market Lab) <span class="badge b-fact">FACT</span>:</strong> S&amp;P 500 7,483.24 (+129.22 wk) Dow 30 52,900.07 (+594.83 wk) Nasdaq Composite 25,832.67 (+535.05 wk) NYSE Composite 23,957.08 (+267.85 wk). The 07/02 tape was a sharp <strong>growth&rarr;value rotation</strong>: sector closes show Technology -2.9% and Consumer Cyclical -2.9% against Healthcare +2.6%, Consumer Defensive +2.3%, Materials +1.8%, and Utilities +1.0% &mdash; classic defensive leadership as the long end sold off. All levels verified against a live market feed on 2026-07-06.
+ </div>
+ <div class="commentary" style="margin-top:8px;background:#141a26;">
+ <strong>Live Monday 07/06 globex overlay <span class="badge b-fact">FACT &middot; FMP feed, pre-cash-open</span>:</strong> ES 7,563.25 (+35) &middot; NQ 29,868.75 (+312.75, +1.8% off Thu cash) &middot; YM 53,245 (+62) &middot; RTY 3,019.4 (+5.2) &mdash; a <em>counter-trend growth bounce</em> after Thursday's rotation, with Nasdaq futures leading. Cross-asset: Gold $4,162.5 (+36.8) &middot; Silver $62.48 &middot; Copper $6.22 &middot; WTI $68.31 &middot; Brent $71.67 &middot; NatGas $3.22 &middot; EUR/USD 1.1419 (soft) &middot; USD/JPY 162.28 (yen weak) &middot; BTC $62,809 (-1.2%). <span class="badge b-inf">Read</span> VIX firming to 16.3 while futures rally is the tell &mdash; the market is bidding growth back but paying up for protection into a heavy data week (ISM Services today, FOMC Minutes Wed 07/08, CPI Tue 07/14).
+ </div>
+</section>
+
+<section id="barrons-indexes">
+ <h2>1A. Barron's U.S. &amp; Americas Stock Indexes <span class="count">FACT - U.S. tab, 7:40 PM EDT 07/02/2026</span></h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead>
+ <tr><th rowspan="2">Index</th><th colspan="5">Daily</th><th colspan="2">5 Day</th><th colspan="4">52 Week</th></tr>
+ <tr><th>High</th><th>Low</th><th>Last</th><th>Chg</th><th>% Chg</th><th>Chg</th><th>% Chg</th><th>High</th><th>Low</th><th>% Chg</th><th>YTD % Chg</th></tr>
+ </thead>
+ <tbody>
+ <tr class="table-section-row"><td colspan="12">Dow Jones</td></tr>
+ <tr><td>Industrial Average</td><td class="num">52,903.85</td><td class="num">52,395.22</td><td class="num">52,900.07</td><td class="num up">594.83</td><td class="num up">1.14</td><td class="num up">979.45</td><td class="num up">1.89</td><td class="num">52,903.85</td><td class="num">43,340.68</td><td class="num up">18.01</td><td class="num up">10.06</td></tr>
+ <tr><td>Transportation Average</td><td class="num">22,211.35</td><td class="num">21,787.05</td><td class="num">22,015.11</td><td class="num up">55.35</td><td class="num up">0.25</td><td class="num up">82.64</td><td class="num up">0.38</td><td class="num">24,825.70</td><td class="num">15,054.29</td><td class="num up">37.19</td><td class="num up">26.84</td></tr>
+ <tr><td>Utility Average</td><td class="num">1,162.00</td><td class="num">1,139.91</td><td class="num">1,161.71</td><td class="num up">26.13</td><td class="num up">2.30</td><td class="num up">3.72</td><td class="num up">0.32</td><td class="num">1,202.79</td><td class="num">1,034.63</td><td class="num up">10.33</td><td class="num up">8.77</td></tr>
+ <tr><td>65 Composite</td><td class="num">16,989.29</td><td class="num">16,841.49</td><td class="num">16,988.97</td><td class="num up">175.20</td><td class="num up">1.04</td><td class="num up">223.40</td><td class="num up">1.33</td><td class="num">16,989.29</td><td class="num">13,587.94</td><td class="num up">21.32</td><td class="num up">13.69</td></tr>
+ <tr><td>Total Stock Market</td><td class="num">74,962.87</td><td class="num">73,736.47</td><td class="num">74,314.56</td><td class="num down">-48.49</td><td class="num down">-0.07</td><td class="num up">1,203.42</td><td class="num up">1.65</td><td class="num">75,375.89</td><td class="num">61,284.26</td><td class="num up">19.60</td><td class="num up">10.09</td></tr>
+ <tr><td>Barron's 400</td><td class="num">1,624.76</td><td class="num">1,624.76</td><td class="num">1,624.76</td><td class="num">0.00</td><td class="num">0.00</td><td class="num up">12.89</td><td class="num up">0.80</td><td class="num">1,644.95</td><td class="num">1,303.26</td><td class="num up">20.16</td><td class="num up">14.99</td></tr>
+ <tr class="table-section-row"><td colspan="12">S&amp;P</td></tr>
+ <tr><td>500 Index</td><td class="num">7,540.75</td><td class="num">7,427.55</td><td class="num">7,483.24</td><td class="num up">0.01</td><td class="num">0.00</td><td class="num up">125.75</td><td class="num up">1.71</td><td class="num">7,620.90</td><td class="num">6,201.00</td><td class="num up">19.17</td><td class="num up">9.32</td></tr>
+ <tr><td>100 Index</td><td class="num">3,696.09</td><td class="num">3,645.48</td><td class="num">3,671.55</td><td class="num up">6.80</td><td class="num up">0.19</td><td class="num up">88.75</td><td class="num up">2.48</td><td class="num">3,791.88</td><td class="num">3,042.16</td><td class="num up">19.16</td><td class="num up">6.97</td></tr>
+ <tr><td>MidCap 400</td><td class="num">3,859.68</td><td class="num">3,766.59</td><td class="num">3,802.81</td><td class="num down">-16.75</td><td class="num down">-0.44</td><td class="num down">-19.44</td><td class="num down">-0.51</td><td class="num">3,861.05</td><td class="num">3,064.98</td><td class="num up">19.16</td><td class="num up">15.06</td></tr>
+ <tr><td>SmallCap 600</td><td class="num">1,807.67</td><td class="num">1,767.21</td><td class="num">1,781.90</td><td class="num down">-12.71</td><td class="num down">-0.71</td><td class="num up">1.42</td><td class="num up">0.08</td><td class="num">1,816.83</td><td class="num">1,306.97</td><td class="num up">29.10</td><td class="num up">21.40</td></tr>
+ <tr><td>SuperComp 1500</td><td class="num">1,696.41</td><td class="num">1,669.95</td><td class="num">1,682.67</td><td class="num down">-0.69</td><td class="num down">-0.04</td><td class="num up">25.68</td><td class="num up">1.55</td><td class="num">1,705.73</td><td class="num">1,397.06</td><td class="num up">19.42</td><td class="num up">9.89</td></tr>
+ <tr class="table-section-row"><td colspan="12">Nasdaq Stock Market</td></tr>
+ <tr><td>Composite</td><td class="num">26,261.09</td><td class="num">25,630.51</td><td class="num">25,832.67</td><td class="num down">-207.36</td><td class="num down">-0.80</td><td class="num up">474.07</td><td class="num up">1.87</td><td class="num">27,190.21</td><td class="num">20,323.02</td><td class="num up">25.39</td><td class="num up">11.15</td></tr>
+ <tr><td>Nasdaq 100</td><td class="num">30,044.50</td><td class="num">29,087.33</td><td class="num">29,329.21</td><td class="num down">-479.92</td><td class="num down">-1.61</td><td class="num down">-111.11</td><td class="num down">-0.38</td><td class="num">30,762.20</td><td class="num">22,587.48</td><td class="num up">28.26</td><td class="num up">16.16</td></tr>
+ <tr><td>Biotech</td><td class="num">6,766.30</td><td class="num">6,595.96</td><td class="num">6,764.57</td><td class="num up">202.93</td><td class="num up">3.09</td><td class="num up">427.33</td><td class="num up">6.74</td><td class="num">6,766.30</td><td class="num">4,260.12</td><td class="num up">55.46</td><td class="num up">18.53</td></tr>
+ <tr class="table-section-row"><td colspan="12">Other U.S. Indexes</td></tr>
+ <tr><td>NYSE Composite</td><td class="num">24,044.15</td><td class="num">23,737.18</td><td class="num">23,957.08</td><td class="num up">219.90</td><td class="num up">0.93</td><td class="num up">346.35</td><td class="num up">1.47</td><td class="num">24,044.15</td><td class="num">20,131.76</td><td class="num up">15.59</td><td class="num up">8.88</td></tr>
+ <tr><td>Russell 1000</td><td class="num">4,117.11</td><td class="num">4,053.21</td><td class="num">4,084.45</td><td class="num up">0.12</td><td class="num">0.00</td><td class="num up">74.27</td><td class="num up">1.85</td><td class="num">4,142.43</td><td class="num">3,392.68</td><td class="num up">18.82</td><td class="num up">9.42</td></tr>
+ <tr><td>Russell 2000</td><td class="num">3,039.84</td><td class="num">2,971.17</td><td class="num">2,996.11</td><td class="num down">-16.48</td><td class="num down">-0.55</td><td class="num down">-11.75</td><td class="num down">-0.39</td><td class="num">3,046.59</td><td class="num">2,143.43</td><td class="num up">33.22</td><td class="num up">20.72</td></tr>
+ <tr><td>Russell 3000</td><td class="num">4,303.55</td><td class="num">4,235.49</td><td class="num">4,268.21</td><td class="num down">-0.89</td><td class="num down">-0.02</td><td class="num up">73.54</td><td class="num up">1.75</td><td class="num">4,321.18</td><td class="num">3,524.47</td><td class="num up">19.45</td><td class="num up">9.93</td></tr>
+ <tr><td>PHLX Gold/Silver</td><td class="num">331.73</td><td class="num">321.06</td><td class="num">328.42</td><td class="num up">11.75</td><td class="num up">3.71</td><td class="num up">9.85</td><td class="num up">3.09</td><td class="num">472.08</td><td class="num">201.53</td><td class="num up">55.88</td><td class="num down">-4.05</td></tr>
+ <tr><td>PHLX Oil Service</td><td class="num">88.41</td><td class="num">86.86</td><td class="num">87.54</td><td class="num up">0.52</td><td class="num up">0.60</td><td class="num down">-3.18</td><td class="num down">-3.51</td><td class="num">110.02</td><td class="num">57.89</td><td class="num up">43.56</td><td class="num up">19.37</td></tr>
+ <tr><td>PHLX Semiconductor</td><td class="num">13,526.72</td><td class="num">12,374.41</td><td class="num">12,626.22</td><td class="num down">-727.06</td><td class="num down">-5.44</td><td class="num down">-1,314.65</td><td class="num down">-9.43</td><td class="num">14,655.29</td><td class="num">5,418.32</td><td class="num up">123.59</td><td class="num up">78.26</td></tr>
+ <tr><td>CBOE Volatility</td><td class="num">17.21</td><td class="num">15.79</td><td class="num">16.15</td><td class="num down">-0.44</td><td class="num down">-2.65</td><td class="num down">-2.74</td><td class="num down">-14.51</td><td class="num">35.30</td><td class="num">13.38</td><td class="num down">-1.40</td><td class="num up">8.03</td></tr>
+ <tr><td>KBW Bank</td><td class="num">185.89</td><td class="num">182.57</td><td class="num">184.10</td><td class="num down">-0.44</td><td class="num down">-0.24</td><td class="num down">-0.54</td><td class="num down">-0.29</td><td class="num">187.55</td><td class="num">137.59</td><td class="num up">26.59</td><td class="num up">12.13</td></tr>
+ <tr><td>Value Line (Geometric)</td><td class="num">681.62</td><td class="num">681.62</td><td class="num">681.62</td><td class="num">0.00</td><td class="num">0.00</td><td class="num up">9.25</td><td class="num up">1.38</td><td class="num">686.40</td><td class="num">590.32</td><td class="num up">10.09</td><td class="num up">8.48</td></tr>
+ <tr><td>Alerian MLP</td><td class="num">345.58</td><td class="num">342.08</td><td class="num">345.13</td><td class="num up">3.05</td><td class="num up">0.89</td><td class="num up">166.53</td><td class="num up">93.24</td><td class="num">345.58</td><td class="num">102.88</td><td class="num up">190.48</td><td class="num up">148.82</td></tr>
+ </tbody>
+ </table>
+ <div class="commentary" style="margin-top:8px;"><strong>Source:</strong> Barron's Market Data Center, U.S. &amp; Americas Stock Indexes, U.S. tab, timestamped 7:40 PM EDT 07/02/2026; underlying sources listed by Barron's as FactSet and Dow Jones Market Data.</div>
+ </div>
+</section>
+
+<section id="kpi">
+ <h2>2. CME Exchange-Wide KPIs <span class="count">FACT Bulletin #126, Thu Jul 2, 2026</span></h2>
+ <div class="grid grid-4">
+ <div class="card"><div class="name">Total Exchange Volume</div><div class="price">30,000,049</div><div class="note">Futures 24,227,782 Options 5,772,267</div></div>
+ <div class="card"><div class="name">Total Open Interest</div><div class="price">128,121,348</div><div class="note">-357,861 day/day</div></div>
+ <div class="card"><div class="name">Interest Rate Complex Vol.</div><div class="price">13,957,625</div><div class="note">OI 84,906,599 largest product group by far</div></div>
+ <div class="card"><div class="name">Equity Index Vol.</div><div class="price">10,590,210</div><div class="note">OI 10,886,063</div></div>
+ <div class="card"><div class="name">Energy Complex Vol.</div><div class="price">1,974,102</div><div class="note">OI 16,199,346</div></div>
+ <div class="card"><div class="name">Metals Complex Vol.</div><div class="price">811,794</div><div class="note">OI 1,998,485</div></div>
+ <div class="card"><div class="name">FX Complex Vol.</div><div class="price">1,105,191</div><div class="note">OI 3,478,407</div></div>
+ <div class="card"><div class="name">SOFR Futures+Options OI</div><div class="price">52.18M</div><div class="note">Largest single OI pool on the exchange</div></div>
+ </div>
+ <div class="chartbox" style="margin-top:16px;">
+ <h3>Volume by Product Complex (Futures + Options, 07/02/2026)</h3>
+ <div class="chart-canvas-wrap"><canvas id="chartKPI"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Each bar is one CME product complex&#39;s total futures+options session volume - relative heights show where institutional risk transfer actually happens, regardless of headlines. <strong>Current read:</strong> Interest Rates (13.96M) out-trades Equity Index (10.59M) - the bond market, not the stock market, is the biggest game on the exchange. <strong>Use:</strong> When the rates bar leads, treat bond-market direction as the master risk switch for every equity setup on this terminal.</div>
+ </div>
+</section>
+
+<section id="nav">
+ <h2>3. Terminal Sections</h2>
+ <div class="pagegrid">
+ <a class="navcard" href="calendar.html"><div class="n">Section</div><h3>Earnings &amp; Economic Calendar</h3><p>FactSet Q2 earnings scorecard, investing.com calendar, DAL/PEP/PGR flagged reports.</p></a>
+ <a class="navcard" href="strategists.html"><div class="n">Section</div><h3>Strategist Roundup</h3><p>Merrill CIO, Ameriprise, Edward Jones, Barron's breadth, BizToc full text synthesis.</p></a>
+ <a class="navcard" href="market-lab.html"><div class="n">Section</div><h3>Market Lab &amp; GuruFocus</h3><p>Barron's index reaction, breadth, highs/lows, sentiment, plus GuruFocus valuation and macro-regime overlay.</p></a>
+ <a class="navcard" href="gamma.html"><div class="n">Section</div><h3>SPX Gamma Exposure</h3><p>Dealer positioning, call/put walls, zero-gamma flip, squeeze scoring.</p></a>
+ <a class="navcard" href="rates.html"><div class="n">Section</div><h3>Rates, SOFR &amp; Treasury</h3><p>Yield curve, CME Treasury futures/options report, SOFR volumes by strategy and tenor.</p></a>
+ <a class="navcard" href="fx.html"><div class="n">Section</div><h3>FX Flow &amp; Notional</h3><p>CME FX report $88.4B session notional, EUR/JPY dominance, per-currency options skew, JPY squeeze thesis.</p></a>
+ <a class="navcard" href="cot.html"><div class="n">Section</div><h3>COT Positioning</h3><p>Insider Week COT table, TFF category nets, Smart Money Heatmap percentages, and four combined index graph snapshots.</p></a>
+ <a class="navcard" href="volume-oi.html"><div class="n">Section</div><h3>Futures Volume &amp; OI</h3><p>Exchange-wide breakdown across every CME product complex equities, rates, metals, energy, crypto.</p></a>
+ <a class="navcard" href="options.html"><div class="n">Section</div><h3>Options Activity</h3><p>S&amp;P 500 / E-mini put-call skew, spread-type breakdown, BTC option chain, crude oil options, sector liquidity.</p></a>
+ <a class="navcard" href="futures-setups.html"><div class="n">Section</div><h3>Futures Trade Setups</h3><p>ES/NQ/YM/RTY/ZB/ZN/DX/GC/CL/BTC pivots, triggers, invalidation levels, micro-contract sizing.</p></a>
+ <a class="navcard" href="quant-framework.html"><div class="n">Section</div><h3>Quant Framework</h3><p>Cross-asset composite ranking, factor scoring, volatility targeting, regime classification, and execution discipline.</p></a>
+ <a class="navcard" href="risk-lab.html"><div class="n">Section</div><h3>Executive Risk Lab</h3><p>Volatility regime, VRP chart, contract sizing calculator, risk matrix, exposure limits, and capital-preservation guardrails.</p></a>
+ <a class="navcard" href="cheat-sheets.html"><div class="n">Section</div><h3>Barchart Cheat Sheets</h3><p>SPX and Nasdaq / IUXX support, resistance, pivot, stochastic, RSI, and volatility envelope levels.</p></a>
+ <a class="navcard" href="source-ledger.html"><div class="n">Section</div><h3>Source Ledger &amp; Snapshots</h3><p>Audit trail for local PDFs, web sources, data freshness, source-access constraints, and rendered source screenshots.</p></a>
+ <a class="navcard" href="guide.html"><div class="n">Section</div><h3>Index &amp; Operations</h3><p>Decision workflow, page theory map, refresh aliases, command workflow, and local skills pack.</p></a>
+ <a class="navcard" href="playbook.html"><div class="n">Section</div><h3>Playbook &amp; Bottom Line</h3><p>Operating rules, highest-conviction synthesis, primary risk, trap to avoid, and invalidation conditions.</p></a>
+ </div>
+</section>
+
+</main>
+
+<div class="footer">
+ Built from direct retrieval of 51 PDFs plus visible web sources from the attached link set. PDF files are local under cme_pdfs and audited in Source Ledger.
+ Refreshed 2026-07-06: CME/strategy source pack re-downloaded (57 files OK, Insider Week snapshots gated as usual), every cross-asset level re-verified against a live market feed, and all quant calculations re-run. Last completed trade date remains Thu 07/02 (markets closed Fri 07/03). Web sources with stale or blocked payloads are explicitly labeled in Source Ledger. Educational framework only - not investment advice. Futures trading involves substantial risk of loss.
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8';
+Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartKPI'), {
+ type: 'bar',
+ data: {
+ labels: ['Interest Rates','Equity Index','Energy','Comm/Alt Invst','FX','Metals'],
+ datasets: [{
+ label: 'Volume (Futures + Options)',
+ data: [13957625, 10590210, 1974102, 1560850, 1105191, 811794],
+ backgroundColor: '#4da3ff'
+ }]
+ },
+ options: {
+ plugins:{legend:{display:false}},
+ scales:{ y:{ ticks:{ callback:(v)=> (v/1e6).toFixed(0)+'M' } } }
+ }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

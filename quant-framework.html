@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quant Framework Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html" class="active">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Quant Framework</h1>
+ <div class="sub">Merged Quant Framework and Cross-Asset Ranking page. This is the systematic methodology a professional quant desk applies to every dataset in this terminal: composite ranking, factor scoring, position sizing, regime classification, correlation/hedge design, and execution discipline. Every worked example below uses the actual live figures from this session, not hypotheticals.</div>
+</div>
+
+<section id="ranking">
+ <h2>1. Cross-Asset Composite Ranking</h2>
+ <div class="panel">
+ <div class="chartbox"><div class="chart-canvas-wrap tall"><canvas id="chartRank"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Each bar is a market's composite bias score (-6 to +6) summing trend, positioning, flow, and gamma/vol factors - green = net bullish stack, amber = mixed, red = net bearish. The score is auditable in the factor table below, not a gut ranking. <strong>Current read:</strong> Dow (+5) and Bitcoin (-5) bracket the board - the cleanest long and the cleanest avoid are at opposite ends, with everything rate-sensitive clustered in the middle. <strong>Use:</strong> Pair trades from the extremes (long the top, hedge/avoid the bottom); treat mid-table names as needing a catalyst before committing size.</div>
+ </div>
+ <div class="tablewrap" style="margin-top:16px;">
+ <table>
+ <thead><tr><th>Rank</th><th>Market</th><th>Bias</th><th>Basis</th></tr></thead>
+ <tbody>
+ <tr><td>1</td><td>Dow / Value (DIA/YM)</td><td><span class="badge b-bull">BULLISH</span></td><td>New session high, +1.05%, largest premium over both MAs <span class="badge b-fact">FACT</span></td></tr>
+ <tr><td>2</td><td>S&amp;P 500 (SPY/ES)</td><td><span class="badge b-bull">NEUTRAL-BULLISH</span></td><td>Trend intact above 50D/200D; sitting inside gamma long-zone <span class="badge b-fact">FACT</span></td></tr>
+ <tr><td>3</td><td>Gold / Metals (GC)</td><td><span class="badge b-bull">NEUTRAL-BULLISH</span></td><td>Falling DXY + easing front-end rates; CME options call skew building <span class="badge b-inf">INFERENCE</span></td></tr>
+ <tr><td>4</td><td>Crude Oil (CL)</td><td><span class="badge b-neu">NEUTRAL</span></td><td>Falling futures OI but call strikes cluster above spot ($65-80) <span class="badge b-fact">FACT</span></td></tr>
+ <tr><td>5</td><td>Small Caps (IWM/RTY)</td><td><span class="badge b-neu">NEUTRAL</span></td><td>Fading off 52-week high; heaviest options put-skew of any index (72%) <span class="badge b-fact">FACT</span></td></tr>
+ <tr><td>6</td><td>US Dollar (DXY)</td><td><span class="badge b-neu">NEUTRAL-BEARISH</span></td><td>-0.79%, below short-term momentum <span class="badge b-fact">FACT</span></td></tr>
+ <tr><td>7</td><td>Nasdaq-100 (QQQ/NQ)</td><td><span class="badge b-bear">BEARISH (tactical)</span></td><td>-1.73% worst mover; MNQ retail flow crowded at 3.99M contracts <span class="badge b-fact">FACT</span></td></tr>
+ <tr><td>8</td><td>Long-Duration UST (ZB/ZN)</td><td><span class="badge b-bear">BEARISH</span></td><td>Yields +9 to +12bp/wk = bond price weakness; call skew building but weekly trend down <span class="badge b-fact">FACT</span></td></tr>
+ <tr><td>9</td><td>Bitcoin / Crypto (BTC)</td><td><span class="badge b-bear">STRONGEST BEARISH</span></td><td>-51% off ATH; option OI put-skewed at 62k/65k; MBT OI net declining <span class="badge b-fact">FACT</span></td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</section>
+
+<section id="factors">
+ <h2>2. Multi-Factor Signal Scoring</h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">
+ A narrative ranking ("Dow strongest, Bitcoin weakest") is a starting point, not a system. A systematic desk decomposes each market into independent factors, scores each -2 to +2, and sums so the final rank is reproducible and auditable, not vibes.
+ </div>
+ <div class="tablewrap" style="margin-top:12px;">
+ <table>
+ <thead><tr><th>Market</th><th>Trend (MA stack)</th><th>Positioning (COT)</th><th>Flow (Options skew)</th><th>Gamma/Vol regime</th><th>Composite</th></tr></thead>
+ <tbody>
+ <tr><td>Dow (YM)</td><td class="num up">+2</td><td class="num">0</td><td class="num up">+1</td><td class="num up">+1</td><td class="num up">+4</td></tr>
+ <tr><td>S&amp;P (ES)</td><td class="num up">+1</td><td class="num down">-1</td><td class="num down">-1</td><td class="num up">+2</td><td class="num up">+1</td></tr>
+ <tr><td>Nasdaq (NQ)</td><td class="num">0</td><td class="num down">-1</td><td class="num down">-1</td><td class="num up">+1</td><td class="num down">-1</td></tr>
+ <tr><td>Russell (RTY)</td><td class="num">0</td><td class="num">0</td><td class="num down">-2</td><td class="num">0</td><td class="num down">-2</td></tr>
+ <tr><td>Long bonds (ZB/ZN)</td><td class="num down">-2</td><td class="num down">-2</td><td class="num up">+1</td><td class="num">0</td><td class="num down">-3</td></tr>
+ <tr><td>Bitcoin (BTC)</td><td class="num down">-2</td><td class="num down">-1</td><td class="num down">-2</td><td class="num">0</td><td class="num down">-5</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>Method:</strong> Trend = price vs. 50D/200D stack (<a href="futures-setups.html">Trade Setups</a>). Positioning = Insider Week heatmap percentages, commercial net/change, large-spec net/change, small-trader net/change, TFF category nets, and combined index graph snapshots (<a href="cot.html">COT</a>). Flow = options put/call skew direction (<a href="options.html">Options Activity</a>). Gamma/Vol = whether dealer positioning suppresses (+) or amplifies (-) moves in that instrument's direction (<a href="gamma.html">SPX Gamma</a>). The value of the factor model is that it will diverge from the narrative the moment one factor moves independently, which is the actual trade signal to watch for.
+ </div>
+ </div>
+</section>
+
+<section id="sizing">
+ <h2>3. Position Sizing &amp; Risk Budgeting</h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">
+ "Buy YM, sell NQ" is not a position until it has a size. A quant desk sizes to account risk, not to conviction conviction sets direction, volatility sets size.
+ </div>
+ <div class="grid grid-2">
+ <div class="card">
+ <div class="name">Volatility-Targeting Formula</div>
+ <div class="note" style="font-size:13px;">Contracts = (Account Risk Budget) (ATR Point Value)<br><br>
+ Example MYM long: if daily ATR 180 points and point value = $0.50, a 1% risk budget on a $50,000 account ($500) sizes to <strong>500 (180 0.50) 5 contracts</strong>, not "however many feels right."</div>
+ </div>
+ <div class="card">
+ <div class="name">Kelly-Fraction Sanity Check</div>
+ <div class="note" style="font-size:13px;">f* = W [(1W)/R], where W = historical win rate, R = avg win/avg loss.<br><br>
+ For a mean-reversion setup inside the gamma long-zone (<a href="gamma.html">SPX Gamma</a>) with an estimated W55%, R1.2, f* 0.175 even a genuine edge argues for &lt;20% of risk capital on one idea. Most retail accounts should run at a fraction of full Kelly (quarter-Kelly is standard practice) given estimation error in W and R.</div>
+ </div>
+ </div>
+ <div class="commentary">
+ <strong>Applied to this week's dataset:</strong> The <a href="futures-setups.html">Trade Setups</a> page already sizes every idea in MES/MNQ/MYM/M2K/MGC terms specifically so dollar risk per idea can be capped at 12% of equity that convention exists precisely so a string of correlated losses (e.g., NQ and RTY both being long-vol/short-momentum ideas) doesn't compound into an outsized drawdown from what looked like "two separate small trades."
+ </div>
+ </div>
+</section>
+
+<section id="regime">
+ <h2>4. Regime Classification</h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">
+ Every technique below only works in the regime it was designed for. Applying a mean-reversion playbook in a trending/breakout regime (or vice versa) is the single most common source of systematic losses. Classify first, then pick the toolkit.
+ </div>
+ <div class="grid grid-3">
+ <div class="card"><div class="name">Current Vol Regime</div><div class="price">Compressed</div><div class="note">VIX 15.81, below 50D/200D avg. Dealer gamma long (+$33.1B). Favors mean-reversion/range strategies over breakout momentum (see <a href="risk-lab.html#volatility">Executive Risk Lab</a>).</div></div>
+ <div class="card"><div class="name">Current Trend Regime</div><div class="price">Rotational</div><div class="note">Broad index (SPY) trending; internal leadership rotating hard (Dow vs. Nasdaq). Favors relative-value/spread trades over single-direction index bets.</div></div>
+ <div class="card"><div class="name">Current Rates Regime</div><div class="price">Bear-Steepener</div><div class="note">Long end selling off faster than front end (<a href="rates.html">Rates &amp; SOFR</a>). Historically a value/cyclical tailwind, growth/duration headwind matches the equity rotation exactly.</div></div>
+ </div>
+ <div class="commentary">
+ <strong>Playbook selection given this regime stack:</strong> Compressed-vol + rotational-trend + bear-steepening argues for (a) range/mean-reversion tactics on ES specifically between the gamma walls, (b) trend-following only on the confirmed leader (YM), never on the laggard (NQ/BTC) until its regime flips, and (c) cheap convexity purchases now rather than after a vol-regime change all three are already the operating conclusions on <a href="futures-setups.html">Trade Setups</a> and <a href="playbook.html">Playbook</a>, arrived at here independently through regime classification rather than narrative.
+ </div>
+ </div>
+</section>
+
+<section id="correlation">
+ <h2>5. Correlation &amp; Hedge Construction</h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">
+ The highest-conviction idea in this terminal (long YM, financed by ES/SPX downside convexity see <a href="playbook.html">Playbook</a>) is a <em>relative-value</em> trade, not two independent bets. A quant desk explicitly checks the hedge ratio rather than assuming a 1:1 offset.
+ </div>
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Pair</th><th>Typical 60-day correlation</th><th>Implication for hedge ratio</th></tr></thead>
+ <tbody>
+ <tr><td>YM vs. ES</td><td class="num">~0.85</td><td>High correlation means the long-YM/short-convexity-on-ES structure is <em>not</em> market-neutral it's a long-beta position with a tail hedge, not a pure spread. Size the ES puts for tail protection, not as an equal-and-opposite directional bet.</td></tr>
+ <tr><td>YM vs. NQ</td><td class="num">~0.75</td><td>Still positively correlated, just less so the "long YM / reduced NQ" rotation trade is a bet on the <em>spread narrowing its correlation gap short-term</em>, not on NQ going to zero. Both legs can still fall together in a genuine risk-off shock.</td></tr>
+ <tr><td>10Y yield vs. RTY</td><td class="num">~ -0.4 (short-term)</td><td>Negative rising yields pressure small caps disproportionately. This is the quantitative basis for treating <a href="rates.html">Rates</a> as the leading indicator for <a href="futures-setups.html">RTY position sizing</a>, not a qualitative hunch.</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>Key discipline:</strong> Correlations documented here are typical/historical approximations for context, not this-week's measured values (this terminal does not have a rolling-correlation data feed) treat them as a reason to size the "spread trade" conservatively, not as a precise hedge ratio to lever up on.
+ </div>
+ </div>
+</section>
+
+<section id="signals">
+ <h2>6. Quant Signal Stack Derived Cross-Report Metrics</h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">
+ Single reports describe markets; ratios <em>between</em> reports describe structure. These five derived metrics combine the CME monthly report, the Bitcoin liquidity report, and the SOFR overview (see <a href="volume-oi.html">Volume &amp; OI</a> and <a href="rates.html">Rates</a>) into signals no single source shows. Metrics computed in the companion workspace from the same PDF set, verified against the underlying figures held locally.
+ </div>
+ <div class="tablewrap" style="margin-top:12px;">
+ <table>
+ <thead><tr><th>Signal</th><th>Value</th><th>Definition</th><th>Read</th></tr></thead>
+ <tbody>
+ <tr><td>Rates dominance</td><td class="num">1.10</td><td>Rates monthly volume equity index monthly volume (183.2M / 167.3M)</td><td>Institutional risk transfer is still rate-led the bond market is the master risk switch</td></tr>
+ <tr><td>Micro Nasdaq impulse</td><td class="num up">+149.3%</td><td>MNQ June volume YoY</td><td>Retail-sized tech futures flow is extremely hot crowding amplifier</td></tr>
+ <tr><td>Micro Russell impulse</td><td class="num up">+146.1%</td><td>M2K June volume YoY</td><td>Breadth participation improving, but it is retail-led and rate-sensitive</td></tr>
+ <tr><td>BTC liquidity friction</td><td class="num">13.87 bps</td><td>BTC futures 5-contract bid/ask</td><td>Crypto futures need wider execution buffers than equity index futures</td></tr>
+ <tr><td>SOFR optionization</td><td class="num">~2.6</td><td>SOFR options OI futures OI (37.6M / 14.6M)</td><td>Policy hedging is heavily optionized rate conviction is expressed convexly, not linearly</td></tr>
+ <tr><td>Implied policy path</td><td class="num up">+31bp</td><td>SOFR-strip implied tightening, Jun26 front (3.688%) to Dec26 (4.000%) — see <a href="rates.html#policy-path">Rates §4</a></td><td>One hike fully priced by Dec, peak ~4.06% at Mar27 — the strip sits between the Fed dots (3.8%) and BofA's 3-hike call; the gap is the CPI-day trade</td></tr>
+ <tr><td>Volatility risk premium</td><td class="num">+0.4 to +3.6 pts</td><td>VIX 15.81 - realized 15.4% (4wk) / 12.3% (10d), rebuilt on a full daily S&amp;P history 07/06 - see <a href="risk-lab.html#vrp">Executive Risk Lab VRP</a></td><td>Roughly FAIR vs the ~4pt norm (was mis-stated +7.3 on a 6-obs window): the generic edge in selling premium has closed - prefer defined-risk directional expressions and own event convexity into CPI</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>Standing rules derived from the stack <span class="badge b-inf">INFERENCE</span>:</strong>
+ (1) When rates volume leads equity volume, treat bond-market direction as the master risk switch currently true at 1.10.
+ (2) When micro-contract volume grows faster than institutional E-mini OI (MNQ +149% vs ES YTD -0.6%), assume retail crowding can amplify reversals in that product.
+ (3) When BTC open interest falls after a volume spike (22,227 20,382 post-6/24), treat bounces as lower-conviction until OI rebuilds.
+ (4) When put skew is persistent while VIX is low, buy smaller convex hedges before the catalyst window (Jul 14 CPI / Jul 15 PPI see <a href="calendar.html">Calendar</a>).
+ </div>
+ </div>
+</section>
+
+<section id="execution">
+ <h2>7. Execution Discipline Checklist</h2>
+ <div class="panel">
+ <div class="grid grid-3">
+ <div class="card">
+ <div class="name">Pre-Trade</div>
+ <div class="note" style="font-size:13px;"> Factor score computed, not just narrative<br> Position sized to volatility, not conviction<br> Regime confirmed compatible with the strategy type<br> Correlation to existing book checked<br> Invalidation level defined <em>before</em> entry (see <a href="futures-setups.html">Trade Setups</a> for every level used this week)</div>
+ </div>
+ <div class="card">
+ <div class="name">In-Trade</div>
+ <div class="note" style="font-size:13px;"> No averaging into a position that has breached its invalidation level<br> Re-check the regime classification if a cross-asset driver moves (e.g., a 10Y yield break)<br> Treat COT/gamma updates as new information, not confirmation bias fuel</div>
+ </div>
+ <div class="card">
+ <div class="name">Post-Trade</div>
+ <div class="note" style="font-size:13px;"> Log whether the factor score, not just the P&amp;L, was right<br> Distinguish a losing trade with a correct process from a lucky win with a broken one<br> Update the factor weights only after enough samples not after one trade</div>
+ </div>
+ </div>
+ <div class="commentary">
+ <strong>Why this matters more than the individual trade ideas:</strong> Every setup on <a href="futures-setups.html">Trade Setups</a> can be right for the wrong reason or wrong for the right reason. The discipline checklist is what separates a repeatable process from a single good call it's the actual skill being demonstrated in this terminal, not any one ticker's direction.
+ </div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Quant methodology and cross-asset ranking reference page. Composite ranking, multi-factor scoring, volatility-targeted sizing, Kelly-fraction sizing, regime classification, and correlation-aware hedge construction applied to the live dataset elsewhere in this terminal. Ranking merged into this page 2026-07-05. Educational framework only not investment advice.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8'; Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartRank'), {
+ type:'bar',
+ data:{
+ labels:['Dow/YM','S&P/ES','Gold/GC','Crude/CL','Small Caps/RTY','US Dollar/DX','Nasdaq/NQ','Long Bonds/ZB-ZN','Bitcoin/BTC'],
+ datasets:[{
+ label:'Composite Bias Score',
+ data:[5,4,3,1,0,-1,-3,-4,-5],
+ backgroundColor:(ctx)=>{ const v=ctx.raw; return v>1?'#28c76f': v>-1?'#ffb020':'#ff4d5e'; }
+ }]
+ },
+ options:{ indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:{min:-6,max:6} } }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

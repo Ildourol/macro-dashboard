@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FX Flow Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html" class="active">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>FX Flow &amp; Notional</h1>
+ <div class="sub">FACT CME FX Report (fx-report.pdf, dated 07/02/2026), extracted from the companion "New project" workspace analysis of the same PDF set. Cross-reference broad positioning through the revamped <a href="cot.html">Insider Week COT page</a>.</div>
+</div>
+
+<div class="commentary" style="margin-bottom:14px;background:#141a26;">
+ <strong>Live spot reference <span class="badge b-fact">FACT · FMP feed, Mon 07/06</span>:</strong> DXY 100.83 (+0.21) · EUR/USD 1.1419 (−0.19%, below its 50D 1.159) · USD/JPY 162.28 (+0.58%, yen near the top of its range) · the dollar is <em>firm</em>, not soft. <span class="badge b-inf">Read</span> This is a notable shift from the prior "falling dollar + rising long-end yields" note: with the 10Y backing up to 4.49%, the dollar is now firming <em>with</em> yields — a more orthodox rate-differential bid (dollar-supportive USD/JPY at 162 especially). A firm dollar plus higher long-end rates is a double headwind for gold/EM and reinforces the caution on rate-sensitive equity longs.
+</div>
+
+<section>
+ <h2>1. Daily FX Futures Notional Last 5 Sessions</h2>
+ <div class="panel">
+ <div class="chartbox"><div class="chart-canvas-wrap"><canvas id="chartFxNotional"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Each bar is one session's total FX futures notional traded on CME - the dollar size of currency risk that changed hands, not contract counts. Compare bar heights to spot participation surges. <strong>Current read:</strong> 07/02 spiked to $88.4B (+38% day/day, highest of the window) while open-interest notional stayed flat at ~$257.6B - heavy turnover but no new net risk, i.e. repositioning into the holiday, not fresh directional betting. <strong>Use:</strong> Volume spikes without OI growth are churn; only trust an FX move as "sponsored" when both rise together.</div>
+ </div>
+ <div class="grid grid-4" style="margin-top:16px;">
+ <div class="card"><div class="name">07/02 Futures Notional</div><div class="price">$88.39B</div><div class="note">Sharp jump from $63.83B on 07/01 highest of the 5-day window, +38% day/day into the pre-holiday session.</div></div>
+ <div class="card"><div class="name">Open Interest Notional</div><div class="price">$257.6B</div><div class="note">Stable across the window ($257.3B$259.4B) the volume spike was turnover, not new risk.</div></div>
+ <div class="card"><div class="name">FX Options OI Notional</div><div class="price">$82.3B</div><div class="note">Dropped sharply from $103.6B on 07/01 consistent with the quarterly expiry roll-off.</div></div>
+ <div class="card"><div class="name">FX Options Volume Notional</div><div class="price">$8.62B</div><div class="note">Highest of the window (from $6.55B on 06/26) hedging demand rising into the event calendar.</div></div>
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>2. Notional by Currency 07/02/2026</h2>
+ <div class="panel">
+ <div class="chartbox"><div class="chart-canvas-wrap"><canvas id="chartFxCcy"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Horizontal bars rank the 07/02 session's notional by currency - where the FX battle is actually being fought. Longer bar = deeper liquidity and more institutional attention. <strong>Current read:</strong> EUR ($29.7B) and JPY ($24.4B) are 61% of all flow; everything else is a side-show. <strong>Use:</strong> Trade the crowded battlegrounds (6E/6J) where fills are clean and the squeeze thesis lives - cross-check the short positioning on the COT page before fading either.</div>
+ </div>
+ <div class="commentary">
+ <strong>EUR ($29.67B) and JPY ($24.44B) dominate</strong> together 61% of the $88.4B session. GBP ($9.10B), AUD ($7.20B), CAD ($6.04B) and CHF ($6.00B) make up most of the rest.
+ <br><strong>Cross-reference to positioning <span class="badge b-inf">INFERENCE</span>:</strong> The revamped COT page now prioritizes Insider Week equity-index positioning. FX-specific positioning rows should be promoted only after the Insider Week FX rows are explicitly refreshed; until then, use this page's CME notional/OI evidence as the primary FX flow source.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>3. FX Options Call/Put Split by Currency</h2>
+ <div class="panel">
+ <div class="chartbox"><div class="chart-canvas-wrap"><canvas id="chartFxOpts"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Paired bars show call vs. put notional per currency (log scale - EUR/JPY dwarf the rest, so small currencies stay visible). Green above red = market paying for that currency to strengthen vs. USD; red above green = paying for downside protection. <strong>Current read:</strong> EUR and JPY are call-heavy (61/39 and 59/41) while GBP is extremely put-heavy (20/80) - the options market is funding the anti-dollar squeeze in the majors while hedging sterling. <strong>Use:</strong> Follow the convexity: option skew often leads the futures move because it is where informed traders position cheaply first.</div>
+ </div>
+ <div class="tablewrap" style="margin-top:14px;">
+ <table>
+ <thead><tr><th>Currency Options</th><th>Call Notional</th><th>Put Notional</th><th>Skew</th></tr></thead>
+ <tbody>
+ <tr><td>EUR</td><td class="num">$728.3M</td><td class="num">$472.7M</td><td><span class="badge b-bull">Call-heavy (61/39)</span></td></tr>
+ <tr><td>JPY</td><td class="num">$511.8M</td><td class="num">$359.7M</td><td><span class="badge b-bull">Call-heavy (59/41)</span></td></tr>
+ <tr><td>AUD</td><td class="num">$34.6M</td><td class="num">$23.6M</td><td><span class="badge b-bull">Call-heavy</span></td></tr>
+ <tr><td>CHF</td><td class="num">$9.1M</td><td class="num">$6.0M</td><td><span class="badge b-bull">Call-heavy</span></td></tr>
+ <tr><td>GBP</td><td class="num">$5.6M</td><td class="num">$22.9M</td><td><span class="badge b-bear">Put-heavy (20/80)</span></td></tr>
+ <tr><td>CAD</td><td class="num">$15.6M</td><td class="num">$31.4M</td><td><span class="badge b-bear">Put-heavy (33/67)</span></td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>Read <span class="badge b-inf">INFERENCE</span>:</strong> Note that in CME FX convention these are options on currency futures quoted against the dollar EUR/JPY calls are bets on those currencies strengthening vs. USD. The call-heavy EUR/JPY option book lines up with the soft-dollar tape (DXY -0.79%, see <a href="futures-setups.html">DX setup</a>) and against the leveraged-fund futures shorts the options market is positioning for exactly the squeeze the futures positioning makes possible. GBP and CAD are the outliers: heavily put-skewed (GBP 80% puts), consistent with the enormous asset-manager GBP short (-146,914) on the COT page. If trading 6E/6J (or micro M6E/M6J), the asymmetry favors the long side of EUR and especially JPY on any US yield stabilization; 6B (GBP) is the crowded short where the pain trade is actually higher.
+ </div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Source: CME FX Report (fx-report.pdf, 07/02/2026) figures extracted in the companion "New project" workspace from the same byte-identical PDF held locally in cme_pdfs/. Broad positioning cross-check from the revamped Insider Week COT page. Educational framework only not investment advice.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8'; Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartFxNotional'), {
+ type:'bar',
+ data:{
+ labels:['06/26','06/29','06/30','07/01','07/02'],
+ datasets:[{label:'FX Futures Notional ($B)', data:[64.25,46.93,70.30,63.83,88.39], backgroundColor:'#4da3ff'}]
+ },
+ options:{ plugins:{legend:{display:false}}, scales:{ y:{ ticks:{ callback:(v)=>'$'+v+'B' } } } }
+});
+new Chart(document.getElementById('chartFxCcy'), {
+ type:'bar',
+ data:{
+ labels:['EUR','JPY','GBP','AUD','CAD','CHF'],
+ datasets:[{label:'Notional Traded 07/02 ($B)', data:[29.67,24.44,9.10,7.20,6.04,6.00], backgroundColor:'#39d6d6'}]
+ },
+ options:{ indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:{ ticks:{ callback:(v)=>'$'+v+'B' } } } }
+});
+new Chart(document.getElementById('chartFxOpts'), {
+ type:'bar',
+ data:{
+ labels:['EUR','JPY','CAD','AUD','GBP','CHF'],
+ datasets:[
+ {label:'Calls ($M)', data:[728.3,511.8,15.6,34.6,5.6,9.1], backgroundColor:'#28c76f'},
+ {label:'Puts ($M)', data:[472.7,359.7,31.4,23.6,22.9,6.0], backgroundColor:'#ff4d5e'}
+ ]
+ },
+ options:{ scales:{ y:{ type:'logarithmic', ticks:{ callback:(v)=> [1,10,100,1000].includes(v)?'$'+v+'M':null } } } }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

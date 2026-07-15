@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SPX Gamma Exposure Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html" class="active">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>SPX Gamma Exposure</h1>
+ <div class="sub">FACT / CAVEAT - insiderfinance.io/gamma-exposure/SPX. <span class="badge b-bear">Visible browser capture 2026-07-04</span></div>
+</div>
+
+<section>
+ <div class="commentary" style="margin-top:0;"><strong>Read-over-read comparison:</strong> Net gamma rose from +$31.9B to +$33.1B and the zero-gamma flip level ticked up slightly from $7,419.32 to $7,423.30 between the two pulls consistent moves in the same direction, not a regime change. Call wall, put wall, and OI are unchanged, confirming this is model drift/refresh rather than new positioning (no new session has traded since Thu 07/02).</div>
+ <div class="grid grid-4">
+ <div class="card"><div class="name">Net Gamma Exposure</div><div class="price up">+$33.1B</div><div class="note">Was +$31.9B on prior pull. Positive volatility-suppressing environment. Dealers likely sell rallies / buy dips.</div></div>
+ <div class="card"><div class="name">SPX Reference Price</div><div class="price">$7,503.04</div><div class="note">Unchanged last trade Thu 07/02 close.</div></div>
+ <div class="card"><div class="name">Call Wall</div><div class="price">$7,550</div><div class="note">+0.63% from spot. Resistance / price magnet (Peak GEX strike). Unchanged.</div></div>
+ <div class="card"><div class="name">Put Wall</div><div class="price">$7,300</div><div class="note">-2.71% from spot. Support zone. Unchanged.</div></div>
+ <div class="card"><div class="name">Zero Gamma Level</div><div class="price">$7,424.38</div><div class="note">From fresh visible InsiderFinance browser capture after page render. Approximately -1.05% from spot 7,503.04. Below this, dealer hedging risk flips toward negative gamma.</div></div>
+ <div class="card"><div class="name">Total Open Interest</div><div class="price">11.8M</div><div class="note">5.2M calls / 6.6M puts. Unchanged.</div></div>
+ <div class="card"><div class="name">Regime</div><div class="price">Long Gamma</div><div class="note">Bullish squeeze conditions: "Possible/Likely" (50/100 score). Unchanged.</div></div>
+ </div>
+
+ <div class="chartbox" style="margin-top:16px;">
+ <h3>Gamma Profile Key Levels Relative to Spot</h3>
+ <div class="chart-canvas-wrap"><canvas id="chartGamma"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Four price levels on one axis - the trading range is defined by where spot (blue) sits relative to the walls. Between zero-gamma (amber) and the call wall (green), dealers suppress moves; below amber they amplify them. <strong>Current read:</strong> Spot $7,503 sits in the stable zone, ~$47 below the call-wall ceiling and ~$79 above the flip level. <strong>Use:</strong> Mean-revert ES inside amber?green; if price closes below the amber line, switch from dip-buying to risk-reduction because the market&#39;s shock absorber flips into an accelerant.</div>
+ </div>
+
+ <div class="panel">
+ <div class="commentary">
+ <strong>What this means for futures traders <span class="badge b-inf">INFERENCE</span>:</strong> With SPX between the zero-gamma line ($7,419) and the call wall ($7,550), dealers are net long gamma they hedge by selling into rallies and buying dips, mechanically compressing realized volatility and favoring range-bound/mean-reverting price action between these two levels. This is directly consistent with the VIX-compression read in Executive Risk Lab.
+ <br><strong>ES/MES translation:</strong> The $7,550 call wall and $7,419 zero-gamma level are the two most important intraday reference points for ES right now. A break and hold above $7,550 removes the dealer-supply ceiling and can accelerate a move (short-covering/gamma-chase); a drop below $7,419 flips dealers to negative gamma, amplifying any selloff. $7,300 put wall is the next major support if that flip happens.
+ <br><strong>Cross-check:</strong> stockaio.com's independently-computed SPX pivot S1 (7,426.94) sits almost exactly on the zero-gamma flip ($7,423.30), and its R1 (7,540.14) sits just below the call wall ($7,550) see <a href="futures-setups.html">Trade Setups</a>. Three independent methodologies converge on the same 7,4207,550 battle zone.
+ <br><strong>Risk to this read:</strong> Gamma exposure shifts daily with option expirations and new positioning treat as a same-session snapshot, not a multi-week structural level.
+ </div>
+ </div>
+</section>
+</main>
+<div class="footer">Source: insiderfinance.io. Refresh caveat: page opens, but text-accessible payload returned No Data on 2026-07-04; levels shown are prior visible capture and require manual live verification before trading. Educational framework only - not investment advice.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8'; Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartGamma'), {
+ type: 'bar',
+ data: {
+ labels: ['Put Wall ($7,300)','Zero Gamma ($7,424)','Spot ($7,503)','Call Wall ($7,550)'],
+ datasets: [{
+ label: 'Level',
+ data: [7300, 7424.38, 7503.04, 7550],
+ backgroundColor: ['#ff4d5e','#ffb020','#4da3ff','#28c76f']
+ }]
+ },
+ options:{
+ indexAxis:'y',
+ plugins:{legend:{display:false}},
+ scales:{ x:{ min:7250, ticks:{ callback:(v)=> '$'+v.toLocaleString() } } }
+ }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Market Lab &amp; GuruFocus - Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">Barron's</span><span class="badge b-neu">GuruFocus</span><span class="badge b-inf">Reaction + Valuation</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html" class="active">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Market Lab &amp; GuruFocus Reaction Dashboard</h1>
+ <div class="sub">Combined tape-reaction and valuation-regime page: Barron's Market Lab breadth/index reaction plus GuruFocus valuation and economy overlay. Current stored snapshots are dated 2026-07-02 to 2026-07-04 depending on source.</div>
+</div>
+
+<div class="commentary" style="margin-bottom:12px;">
+ <strong>Source note <span class="badge b-fact">FACT</span>:</strong> Barron's describes Market Lab as a set of key indicators, indexes, and measures for market direction, strength, and momentum. The live page can require dynamic rendering, so this dashboard uses the last locally verified Barron's Market Lab / Markets Diary snapshot dated 2026-07-02 and cross-checks major index closes against public index-fared reports for the same date. Direct sources: <a href="https://www.barrons.com/market-data/market-lab?mod=md_subnav">Barron's Market Lab</a> and <a href="https://www.barrons.com/market-data/stocks/markets-diary">Barron's Markets Diary</a>.
+</div>
+
+<section id="critical">
+ <h2>1. Critical Market Lab Fields To Maintain <span class="count">FACT fields + derived ratios</span></h2>
+ <div class="panel">
+ <div class="metric-strip">
+  <div class="metric"><div class="label">NYSE advance ratio</div><div class="value up">61.3%</div></div>
+  <div class="metric"><div class="label">NYSE net advancers</div><div class="value up">+619</div></div>
+  <div class="metric"><div class="label">NYSE high/low ratio</div><div class="value up">7.9x</div></div>
+  <div class="metric"><div class="label">Nasdaq advance ratio</div><div class="value down">47.5%</div></div>
+  <div class="metric"><div class="label">Nasdaq net advancers</div><div class="value down">-254</div></div>
+  <div class="metric"><div class="label">Nasdaq high/low ratio</div><div class="value up">3.0x</div></div>
+ </div>
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Field</th><th>Current Stored Value</th><th>Why It Must Be Added</th><th>Reaction Use</th></tr></thead>
+ <tbody>
+ <tr><td>Index close + daily change</td><td>Dow 52,900.07; S&amp;P 500 7,483.24; Nasdaq 25,832.67; Russell 2000 2,996.11</td><td>Raw price confirms which headline index is actually leading or failing.</td><td>Separates rotation from broad risk-off: Dow up while Nasdaq/Russell down = leadership shift.</td></tr>
+ <tr><td>Weekly and YTD change</td><td>S&amp;P +1.8% wk / +9.3% YTD; Dow +2.0% / +10.1%; Nasdaq +2.1% / +11.1%; Russell -0.5% / +20.7%</td><td>Prevents overreacting to one session when the weekly trend still points elsewhere.</td><td>Flags when a daily selloff is correction inside a trend versus a trend break.</td></tr>
+ <tr><td>Advancers / decliners / unchanged</td><td>NYSE 1,684 / 1,065 / 107; Nasdaq 2,351 / 2,605 / 188</td><td>Breadth tells whether index moves are carried by the whole tape or a few large names.</td><td>NYSE confirmation with Nasdaq deterioration supports value-over-tech rotation.</td></tr>
+ <tr><td>New highs / new lows</td><td>NYSE 173 / 22; Nasdaq 305 / 102</td><td>High-low data measures trend quality better than the close alone.</td><td>Strong high-low ratios argue against panic; worsening lows would change the reaction map.</td></tr>
+ <tr><td>Sentiment overlay</td><td>Delta Market Sentiment Indicator 66.4%, Bullish; allocation model 100% equities</td><td>Sentiment shows crowd exposure and late-cycle risk, not just price direction.</td><td>Bullish sentiment with put demand favors smaller, hedged upside exposure over naked chasing.</td></tr>
+ <tr><td>Source timestamp and access caveat</td><td>Stored snapshot Thu 2026-07-02; dynamic page fetch can load as "Loading..."</td><td>Market Lab is useful only when the date is explicit.</td><td>Stale breadth is a regime clue, not a live execution trigger.</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+</section>
+
+<section id="indexes">
+ <h2>2. Major Index Reaction Table <span class="count">Market Lab + skill-based scenario scoring</span></h2>
+ <div class="panel">
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Index / Futures Proxy</th><th>Close</th><th>Day / Week / YTD</th><th>Breadth Proxy</th><th>Reaction Score</th><th>Desk Read</th></tr></thead>
+ <tbody>
+ <tr><td>Dow 30 / YM</td><td class="num">52,900.07</td><td class="num up">+1.1% day / +2.0% wk / +10.1% YTD</td><td>NYSE positive breadth; 61.3% advancers; 173 new highs.</td><td class="num up">+5</td><td>Leadership confirmation. Value/cyclical tape has the cleanest upside sponsorship as long as the 10Y does not accelerate above the current bear-steepener zone.</td></tr>
+ <tr><td>S&amp;P 500 / ES</td><td class="num">7,483.24</td><td class="num up">flat day / +1.8% wk / +9.3% YTD</td><td>Broad component support reported, but index close was flat because mega-cap pressure offset breadth.</td><td class="num up">+2</td><td>Constructive but capped. Best treated as range/mean-reversion inside the long-gamma zone unless breadth turns into price follow-through.</td></tr>
+ <tr><td>Nasdaq Composite / NQ</td><td class="num">25,832.67</td><td class="num down">-0.8% day / +2.1% wk / +11.1% YTD</td><td>Nasdaq decliners beat advancers by 254; tech-heavy weakness is confirmed internally.</td><td class="num down">-4</td><td>Rotation loser. The weekly trend is still positive, but same-day breadth and crowded MNQ flow make rallies lower quality until advancers reclaim decliners.</td></tr>
+ <tr><td>Russell 2000 / RTY</td><td class="num">2,996.11</td><td class="num down">-0.5% day / -0.5% wk / +20.7% YTD</td><td>Small-cap price failed despite solid NYSE breadth; needs rate confirmation.</td><td class="num down">-3</td><td>Most sensitive to rates. Strong YTD tape is intact, but current reaction is vulnerable while long-end yields pressure duration and financing-sensitive names.</td></tr>
+ <tr><td>NYSE Composite</td><td class="num">23,957.08</td><td class="num up">+267.85 snapshot change</td><td>Best breadth quality in the dataset: positive net advancers and 7.9x new highs/lows.</td><td class="num up">+5</td><td>Confirms the rotation is broadening outside mega-cap technology rather than becoming a full-market liquidation.</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="formula" style="margin-top:12px;">
+ Reaction Score = Price trend (-2..+2) + Breadth (-2..+2) + New-high quality (-1..+1) + CME futures/option flow (-2..+2) + Macro/rates fit (-2..+2) + Vol/gamma regime (-1..+1). Scores are research signals only; live execution still needs current prices and source timestamps.
+ </div>
+ </div>
+</section>
+
+<section id="charts">
+ <h2>3. Breadth And Reaction Visuals</h2>
+ <div class="panel">
+ <div class="chartbox">
+  <h3>NYSE vs Nasdaq Breadth - 2026-07-02</h3>
+  <div class="chart-canvas-wrap"><canvas id="chartBreadth"></canvas></div>
+  <div class="chart-read"><strong>How to read:</strong> Blue bars are advancers and red bars are decliners. The gap between them is the breadth impulse. <strong>Current read:</strong> NYSE breadth is positive while Nasdaq breadth is negative, which matches the Dow-over-Nasdaq rotation. <strong>Use:</strong> A bullish index close matters more when advancers beat decliners; a negative Nasdaq breadth print warns that tech rallies need confirmation before size.</div>
+ </div>
+ <div class="chartbox" style="margin-top:14px;">
+  <h3>Major Index Market-Reaction Score</h3>
+  <div class="chart-canvas-wrap"><canvas id="chartReaction"></canvas></div>
+  <div class="chart-read"><strong>How to read:</strong> Scores above zero mean price, breadth, flow, and macro inputs lean supportive; below zero means the reaction stack is fragile. <strong>Current read:</strong> Dow/YM and NYSE Composite lead, S&amp;P is constructive but muted, Nasdaq and Russell are tactical laggards. <strong>Use:</strong> Favor pullback confirmation in the leaders and demand better breadth before chasing the laggards.</div>
+ </div>
+ </div>
+</section>
+
+<section id="scenarios">
+ <h2>4. Market Reaction Scenarios <span class="count">INFERENCE - not investment advice</span></h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead><tr><th>Scenario</th><th>Evidence</th><th>Trigger / Confirmation</th><th>Invalidation</th><th>What To Watch</th></tr></thead>
+ <tbody>
+ <tr><td><span class="badge b-bull">Bullish rotation</span></td><td>Dow record close, NYSE advancers 61.3%, NYSE highs/lows 7.9x, long-gamma SPX regime.</td><td>NYSE breadth stays positive while S&amp;P converts flat closes into upside follow-through.</td><td>New lows expand faster than new highs, or 10Y yield acceleration pressures all equity groups.</td><td>YM/DIA leadership, Financials, Utilities, Health Care, S&amp;P equal-weight relative strength.</td></tr>
+ <tr><td><span class="badge b-neu">Base case chop</span></td><td>S&amp;P flat despite broad component support; VIX compressed; persistent put demand.</td><td>Index holds gamma range, breadth remains mixed, and CPI/PPI catalyst window stays ahead.</td><td>VIX expands with downside breadth and dealer-gamma support weakens.</td><td>SPX gamma walls, put/call skew, intraday failed breakouts.</td></tr>
+ <tr><td><span class="badge b-bear">Tech-led risk-off</span></td><td>Nasdaq decliners exceed advancers, chip/AI pressure, crowded MNQ participation.</td><td>Nasdaq breadth remains below 50% and NQ fails to reclaim leadership while rates stay firm.</td><td>Nasdaq advancers reclaim decliners and NQ closes back above tactical resistance with volume.</td><td>Semiconductors, QQQ/NQ relative strength, MNQ OI/volume, 10Y yield direction.</td></tr>
+ </tbody>
+ </table>
+ </div>
+</section>
+
+<section id="valuation-overlay">
+ <h2>5. GuruFocus Integration Rule <span class="count">valuation + economy</span></h2>
+ <div class="panel">
+  <div class="commentary"><strong>What this adds <span class="badge b-inf">INFERENCE</span>:</strong> Market Lab tells what the tape did; GuruFocus adds whether the broad market is cheap or expensive, whether macro data is still carrying the tape, and how much valuation risk sits under the current trend. Use this as a regime weight, not an intraday trigger.</div>
+ </div>
+</section>
+<section id="source-map">
+ <h2>6. GuruFocus Newsletter Map - What Is Useful Here <span class="count">FACT GuruFocus newsletter dated Jul 4, 2026</span></h2>
+ <div class="panel">
+ <div class="grid grid-4">
+  <div class="card"><div class="name">U.S. Economy</div><div class="price">Rates / Jobs</div><div class="note">Yield curve, inflation, unemployment, VIX, financial conditions, money supply, margin debt, profit margins.</div></div>
+  <div class="card"><div class="name">Market Valuation</div><div class="price">Expensive</div><div class="note">GF Value, Buffett Indicator, Shiller CAPE, predicted returns, Excess CAPE Yield.</div></div>
+  <div class="card"><div class="name">Market Overview</div><div class="price">Leadership</div><div class="note">Sector weights/performance, cap-size returns, value vs growth, S&amp;P/Nasdaq concentration.</div></div>
+  <div class="card"><div class="name">U.S. Equities</div><div class="price">Microflow</div><div class="note">Earnings, IPOs, insider/politician activity, aggregated guru stock picks.</div></div>
+ </div>
+ <div class="commentary"><strong>Integration rule:</strong> only promote a GuruFocus item into the trading dashboard when it changes one of four regime weights: valuation risk, rates pressure, economic slack, or concentration/leadership quality.</div>
+ </div>
+</section>
+
+<section id="valuation">
+ <h2>7. GuruFocus Valuation Dashboard <span class="count">FACT + derived premium</span></h2>
+ <div class="panel">
+ <div class="grid grid-4">
+  <div class="card"><div class="name">Buffett Indicator</div><div class="price">231.8%</div><div class="note">Total market cap / GDP; GuruFocus labels the market significantly overvalued and estimates -0.9% annualized forward return including dividends.</div></div>
+  <div class="card"><div class="name">Modified Buffett</div><div class="price">191.3%</div><div class="note">Total market cap / (GDP + Fed assets); also significantly overvalued, estimated -1.0% annualized return.</div></div>
+  <div class="card"><div class="name">Shiller CAPE</div><div class="price">39.46</div><div class="note">As of 2026-07-01; 22.1% above long-term average of 32.32 and near the historical upper zone.</div></div>
+  <div class="card"><div class="name">Valuation Risk Score</div><div class="price down">-5</div><div class="note">Penalty from broad overvaluation, CAPE elevation, and negative long-term return estimates.</div></div>
+ </div>
+ <div class="tablewrap" style="margin-top:12px;">
+ <table>
+ <thead><tr><th>Index</th><th>Index Price</th><th>GF Value</th><th>Price / GF Value</th><th>Premium To GF Value</th><th>Quant Read</th></tr></thead>
+ <tbody>
+ <tr><td>S&amp;P 500</td><td class="num">7,483.24</td><td class="num">6,494.03</td><td class="num down">1.15</td><td class="num down">+15.2%</td><td>Broad market is above GuruFocus fair-value estimate; trend can continue, but valuation lowers forward-return cushion.</td></tr>
+ <tr><td>Nasdaq 100</td><td class="num">29,329.21</td><td class="num">24,229.72</td><td class="num down">1.21</td><td class="num down">+21.0%</td><td>Most valuation-stretched of the three; this reinforces the NQ crowding/rotation warning elsewhere in the terminal.</td></tr>
+ <tr><td>Dow 30</td><td class="num">52,900.07</td><td class="num">45,703.04</td><td class="num down">1.16</td><td class="num down">+15.7%</td><td>Dow leadership is real tactically, but it is not cheap in absolute terms; prefer pullbacks over late chases.</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="chartbox" style="margin-top:14px;">
+  <h3>Index Premium To GuruFocus GF Value</h3>
+  <div class="chart-canvas-wrap"><canvas id="chartGfPremium"></canvas></div>
+  <div class="chart-read"><strong>How to read:</strong> Bars show how far each index trades above GuruFocus fair value. Higher premium means less valuation cushion if rates, earnings, or breadth weaken. <strong>Current read:</strong> Nasdaq 100 has the largest premium (+21.0%), while S&amp;P and Dow are both about +15-16%. <strong>Use:</strong> Treat valuation as a position-size haircut: it does not time tops, but it argues against adding size after stretched rallies without fresh breadth or earnings confirmation.</div>
+ </div>
+ </div>
+</section>
+
+<section id="economy">
+ <h2>8. GuruFocus Economy, Rates, And Risk Conditions <span class="count">FACT source dates shown</span></h2>
+ <div class="panel">
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Category</th><th>Latest GuruFocus Value</th><th>Date</th><th>Signal</th><th>Market Reaction Weight</th></tr></thead>
+ <tbody>
+ <tr><td>Yield curve</td><td>1M 3.607%, 1Y 3.946%, 2Y 4.137%, 10Y 4.485%, 30Y 4.985%</td><td>2026-07-02</td><td>Bear-steepening / positive 10Y-3M spread around 0.67%</td><td>Supports value/Dow over duration-heavy Nasdaq, but higher long-end yields cap multiples.</td></tr>
+ <tr><td>Labor market</td><td>Unemployment 4.2%, below 4.56% long-term average</td><td>2026-06-01</td><td>Still not recessionary by level</td><td>Keeps soft-landing base case alive, but weak payroll additions elsewhere in the dashboard matter for the next turn.</td></tr>
+ <tr><td>Inflation</td><td>Core inflation 2.85%; 30Y breakeven 2.23%</td><td>May/Jun 2026</td><td>Inflation is not dead, but long-term breakevens are anchored</td><td>Fed can stay cautious; valuation multiple expansion needs yields to stop rising.</td></tr>
+ <tr><td>Nominal growth</td><td>GDP 31,865.721, +6.07% YoY</td><td>2026-01-01</td><td>Nominal economy still large enough to support revenues</td><td>Helps earnings denominator, but not enough to offset a 231.8% market-cap/GDP valuation by itself.</td></tr>
+ <tr><td>Policy rate</td><td>Effective fed funds 3.63%</td><td>2026-05-01</td><td>Restrictive but below 2025 levels</td><td>Risk assets need either earnings growth or lower term premium; cash still has a hurdle rate.</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="chartbox" style="margin-top:14px;">
+  <h3>GuruFocus Yield Curve Snapshot</h3>
+  <div class="chart-canvas-wrap"><canvas id="chartYieldCurve"></canvas></div>
+  <div class="chart-read"><strong>How to read:</strong> The line rises from front-end bills to the long bond. A steeper long end means duration risk is being repriced. <strong>Current read:</strong> The curve is upward sloping from 1M to 30Y, with the 30Y near 5%. <strong>Use:</strong> When long yields lead upward, haircut high-duration equity exposure first and require stronger breadth before trusting Nasdaq breakouts.</div>
+ </div>
+ </div>
+</section>
+
+<section id="quant">
+ <h2>9. GuruFocus Four-Quadrant Quant Regime Read <span class="count">INFERENCE</span></h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead><tr><th>Quadrant</th><th>Score</th><th>Evidence</th><th>Dashboard Translation</th></tr></thead>
+ <tbody>
+ <tr><td>Valuation</td><td class="num down">-5</td><td>Buffett Indicator 231.8%, modified 191.3%, CAPE 39.46, all major indexes above GF Value.</td><td>Do not let short-term bullish flow become large unhedged exposure; valuation is the biggest medium-term drag.</td></tr>
+ <tr><td>Macro Growth</td><td class="num up">+2</td><td>Unemployment 4.2% and nominal GDP +6.07% YoY keep recession pressure muted for now.</td><td>Supports a rotation/chop base case rather than immediate broad liquidation.</td></tr>
+ <tr><td>Rates / Liquidity</td><td class="num down">-2</td><td>10Y 4.485%, 30Y 4.985%, effective funds 3.63%, positive but bear-steepening curve.</td><td>Rates are still the master risk switch; pressure falls hardest on NQ and small-cap financing trades.</td></tr>
+ <tr><td>Market Structure</td><td class="num">0</td><td>GuruFocus newsletter emphasizes sector/cap-size/concentration tools; Market Lab shows NYSE breadth better than Nasdaq breadth.</td><td>Leadership is rotating, not uniformly risk-on; prefer relative strength confirmation over index-level headlines.</td></tr>
+ </tbody>
+ </table>
+ </div>
+</section>
+
+<section id="scenarios">
+ <h2>10. GuruFocus Scenario Overlay For The Terminal</h2>
+ <div class="panel tablewrap">
+ <table>
+ <thead><tr><th>Scenario</th><th>GuruFocus Evidence</th><th>Flow Confirmation Needed</th><th>Invalidation</th></tr></thead>
+ <tbody>
+ <tr><td><span class="badge b-bull">Melt-up with valuation drag</span></td><td>Economy not recessionary; indexes can remain overvalued while liquidity and earnings hold.</td><td>Breadth expands beyond Dow/NYSE; NQ breadth repairs; rates stop rising.</td><td>10Y/30Y push higher with Nasdaq breadth still negative.</td></tr>
+ <tr><td><span class="badge b-neu">Base case rotation/chop</span></td><td>Macro still okay, valuation stretched, long yields firm.</td><td>YM/DIA leadership persists while ES mean-reverts inside gamma range.</td><td>NYSE new lows expand or long-gamma support breaks.</td></tr>
+ <tr><td><span class="badge b-bear">Valuation reset</span></td><td>Negative Buffett forward-return estimate and elevated CAPE leave little long-term cushion.</td><td>Put skew rises, VIX expands, and futures OI builds on downside volume.</td><td>Rates fall, earnings revisions improve, and Nasdaq breadth reclaims leadership.</td></tr>
+ </tbody>
+ </table>
+ </div>
+</section>
+</main>
+<div class="footer">Sources: Barron's Market Lab / Markets Diary stored snapshot dated 2026-07-02; GuruFocus U.S. Market Newsletter dated 2026-07-04 and linked indicator pages. Educational framework only - not investment advice. Futures trading involves substantial risk of loss.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8';
+Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartBreadth'), {
+ type:'bar',
+ data:{
+  labels:['NYSE','Nasdaq'],
+  datasets:[
+   {label:'Advancers', data:[1684,2351], backgroundColor:'#28c76f'},
+   {label:'Decliners', data:[1065,2605], backgroundColor:'#ff4d5e'},
+   {label:'New Highs', data:[173,305], backgroundColor:'#4da3ff'},
+   {label:'New Lows', data:[22,102], backgroundColor:'#ffb020'}
+  ]
+ },
+ options:{ scales:{ y:{ ticks:{ callback:(v)=>v.toLocaleString() } } } }
+});
+new Chart(document.getElementById('chartReaction'), {
+ type:'bar',
+ data:{
+  labels:['Dow/YM','NYSE Composite','S&P/ES','Russell/RTY','Nasdaq/NQ'],
+  datasets:[{
+   label:'Reaction Score',
+   data:[5,5,2,-3,-4],
+   backgroundColor:(ctx)=> ctx.raw>0 ? '#28c76f' : '#ff4d5e'
+  }]
+ },
+ options:{ indexAxis:'y', plugins:{legend:{display:false}}, scales:{ x:{min:-6,max:6} } }
+});
+
+new Chart(document.getElementById('chartGfPremium'), {
+ type:'bar',
+ data:{
+  labels:['S&P 500','Nasdaq 100','Dow 30'],
+  datasets:[{label:'Premium to GF Value %', data:[15.2,21.0,15.7], backgroundColor:'#ff4d5e'}]
+ },
+ options:{plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:(v)=>v+'%'}}}}
+});
+new Chart(document.getElementById('chartYieldCurve'), {
+ type:'line',
+ data:{
+  labels:['1M','1Y','2Y','10Y','30Y'],
+  datasets:[{label:'Treasury Yield %', data:[3.607,3.946,4.137,4.485,4.985], borderColor:'#4da3ff', backgroundColor:'rgba(77,163,255,.18)', pointRadius:4, tension:.18, fill:true}]
+ },
+ options:{plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:(v)=>v.toFixed(1)+'%'}}}}
+});
+</script>
+</body>
+</html>
+
+
+
+

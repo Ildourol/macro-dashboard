@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rates, SOFR & Treasury Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html" class="active">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Rates, SOFR &amp; Treasury Complex</h1>
+ <div class="sub">Live UST yield curve plus CME Group's Treasury Market Overview and SOFR Market Update reports (Bulletin dated 07/02/2026).</div>
+</div>
+
+<section id="curve">
+ <h2>1. Treasury Curve Bear-Steepening in Progress <span class="count">FACT (live) + INFERENCE</span></h2>
+ <div class="panel">
+ <div class="chartbox"><div class="chart-canvas-wrap tall"><canvas id="chartCurve"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> The two lines are the full Treasury yield curve on two dates - solid blue is current (07/02), dashed grey is one week prior (06/25). The <em>gap</em> between the lines at each tenor shows where repricing happened; a gap widening toward the right is a bear-steepener. <strong>Current read:</strong> The lines nearly overlap through 1Y but split progressively from 2Y outward (+5bp) to 20Y/30Y (+12bp) - the long end is repricing term premium while the Fed-anchored front end barely moved. <strong>Use:</strong> Watch where the gap grows next week: if it starts closing from the long end, the steepener trade and the anti-duration equity rotation both lose their engine.</div>
+ </div>
+ <div class="tablewrap" style="margin-top:16px;">
+ <table>
+ <thead><tr><th>Date</th><th>1M</th><th>3M</th><th>6M</th><th>1Y</th><th>2Y</th><th>5Y</th><th>10Y</th><th>20Y</th><th>30Y</th></tr></thead>
+ <tbody>
+ <tr><td>2026-07-02</td><td class="num">3.70</td><td class="num">3.82</td><td class="num">3.98</td><td class="num">3.96</td><td class="num">4.14</td><td class="num">4.23</td><td class="num">4.49</td><td class="num">4.99</td><td class="num">4.98</td></tr>
+ <tr><td>2026-06-25</td><td class="num">3.70</td><td class="num">3.84</td><td class="num">3.95</td><td class="num">3.96</td><td class="num">4.09</td><td class="num">4.15</td><td class="num">4.40</td><td class="num">4.87</td><td class="num">4.86</td></tr>
+ <tr><td style="color:var(--muted)"> (bp)</td><td class="num" style="color:var(--muted)">0</td><td class="num down">-2</td><td class="num up">+3</td><td class="num" style="color:var(--muted)">0</td><td class="num up">+5</td><td class="num up">+8</td><td class="num up">+9</td><td class="num up">+12</td><td class="num up">+12</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="tablewrap" style="margin-top:14px;">
+ <table>
+ <thead><tr><th>Curve Spread</th><th>Current (07/02)</th><th>Prior (06/25)</th><th>Change</th><th>Read</th></tr></thead>
+ <tbody>
+ <tr><td>2Y10Y</td><td class="num">35 bp</td><td class="num">31 bp</td><td class="num up">+4 bp</td><td>Belly steepening the classic bear-steepener signature</td></tr>
+ <tr><td>5Y30Y</td><td class="num">75 bp</td><td class="num">71 bp</td><td class="num up">+4 bp</td><td>Long-end term premium building</td></tr>
+ <tr><td>3M10Y</td><td class="num">67 bp</td><td class="num">56 bp</td><td class="num up">+11 bp</td><td>Largest weekly move front end anchored while duration reprices</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>What this means <span class="badge b-inf">INFERENCE</span>:</strong> The long end (10Y/20Y/30Y) sold off 9&ndash;12bp on the week while the front end (3M) eased 2bp &mdash; a textbook <strong>bear-steepener</strong>, now quantified: all three benchmark spreads widened, with 3M10Y widening the most (+11bp). Headwind for ZB/ZN and rate-sensitive equity cohorts (small caps, growth); tailwind for value/cyclicals. This lines up directly with the Dow-outperforms-Nasdaq divergence &mdash; and the 07/02 sector tape (Tech -2.9% / Financials -0.6% vs Healthcare +2.6% / Materials +1.8%) is the equity fingerprint of exactly this move. <strong>Curve-spread trade expression:</strong> the widening spreads are themselves tradeable via NOB (notes-over-bonds) or 2s10s futures spreads &mdash; a steepener position profits from continuation without taking outright duration risk, though it carries its own margin and legging risk.
+ <br><span class="badge b-fact">Live 07/06</span> The 10Y is holding <strong>~4.49%</strong> and the 30Y ~4.98% into the new week (no new UST settlement print yet — cash Treasuries through 07/02) — critically, the 10Y remains <em>above</em> the 4.35&ndash;4.40% zone whose breach is the playbook's invalidation for the value-over-growth rotation, so the steepener engine is still running as of the Monday globex open.
+ </div>
+ </div>
+</section>
+
+<section id="cme-treasury">
+ <h2>2. CME Treasury Futures &amp; Options <span class="count">FACT treasury-market-overview-report.pdf, dated 07/02/2026</span></h2>
+ <div class="panel">
+ <div class="grid grid-4">
+ <div class="card"><div class="name">Total Treasury Futures OI</div><div class="price">23,003,394</div><div class="note">Volume 5,170,711 on 07/02 (5-day avg ~5.4M)</div></div>
+ <div class="card"><div class="name">10Y Note (SEP26)</div><div class="price">1,665,287 vol</div><div class="note">OI 5,333,798 largest single-tenor OI</div></div>
+ <div class="card"><div class="name">5Y Note (SEP26)</div><div class="price">1,421,098 vol</div><div class="note">OI 6,213,186 highest OI of any tenor</div></div>
+ <div class="card"><div class="name">2Y Note (SEP26)</div><div class="price">1,032,681 vol</div><div class="note">OI 4,590,998</div></div>
+ <div class="card"><div class="name">30Y Bond (SEP26)</div><div class="price">300,966 vol</div><div class="note">OI 1,901,267</div></div>
+ <div class="card"><div class="name">Ultra T-Bond (SEP26)</div><div class="price">273,164 vol</div><div class="note">OI 2,442,651</div></div>
+ <div class="card"><div class="name">TN (Ultra 10Y, SEP26)</div><div class="price">471,414 vol</div><div class="note">OI 2,463,900</div></div>
+ <div class="card"><div class="name">All Treasury Options Vol.</div><div class="price">1,869,323</div><div class="note">59.52% calls / 40.48% puts on 07/02 most call-skewed of the last 5 sessions</div></div>
+ </div>
+ <div class="chartbox" style="margin-top:16px;">
+ <h3>Treasury Futures Volume: Last 5 Trade Days</h3>
+ <div class="chart-canvas-wrap"><canvas id="chartTsyVol"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Daily total Treasury futures volume across the whole curve - the pulse of institutional rate positioning. Spikes mark repricing days; quiet bars mark consolidation. <strong>Current read:</strong> The 06/30 spike (6.84M) was the week's repricing day, then volume decayed into the 07/02 pre-holiday session (5.17M) - the yield backup happened on conviction volume, not thin trade. <strong>Use:</strong> A trend move printed on high volume deserves respect; fade attempts against the bear-steepener need to see a comparable-volume reversal day first.</div>
+ </div>
+ <div class="commentary">
+ <strong>Call/Put skew flip <span class="badge b-inf">INFERENCE</span>:</strong> Treasury options call volume share swung from 42.8% (06/29) to 59.5% (07/02) the sharpest one-week shift in the dataset. Combined with the yield backup, this suggests positioning for continued price weakness being unwound or reversed intraday into 7/2 worth confirming against the next print rather than over-reading a single session.
+ <br><strong>Top OI products (07/02):</strong> 10Y Note Call AUG26 (971,965 OI, -8,266 chg) and 10Y Note Put AUG26 (845,636 OI, +17,210 chg) dominate the AUG26 10Y strip is where the market's rate-path conviction is concentrated.
+ </div>
+ </div>
+</section>
+
+<section id="sofr">
+ <h2>3. SOFR Market Volumes, OI &amp; Strategy Mix <span class="count">FACT sofr-market-overview-report.pdf, dated 07/02/2026</span></h2>
+ <div class="panel">
+ <div class="grid grid-4">
+ <div class="card"><div class="name">SOFR F&amp;O Volume (07/02)</div><div class="price">5,962,090</div><div class="note">Futures 4,395,830 + Options 1,566,260</div></div>
+ <div class="card"><div class="name">SOFR F&amp;O Open Interest</div><div class="price">52,180,771</div><div class="note">Largest single OI pool on the entire exchange</div></div>
+ <div class="card"><div class="name">Peak OI Contract Months</div><div class="price">Sep26 / Dec26</div><div class="note">12.7%/14.1% of futures OI; 32.0%/32.7% of options OI concentrated here</div></div>
+ <div class="card"><div class="name">Futures Venue Mix</div><div class="price">98.7% Globex</div><div class="note">Block 0.9%, Floor 0.3%, EFRP 0.1%</div></div>
+ <div class="card"><div class="name">Options Venue Mix</div><div class="price">69.2% Floor</div><div class="note">Globex 30.3%, Block 0.5% options skew far more to floor execution than futures</div></div>
+ <div class="card"><div class="name">SR3 Strategy Mix</div><div class="price">49% Outright</div><div class="note">24.6% Calendar Spreads, 20.5% Packs &amp; Bundles, 5.2% Flies</div></div>
+ <div class="card"><div class="name">Implied 3M SOFR (peak)</div><div class="price">~4.05%</div><div class="note">Peaks around mid-2027 tenor per the implied curve, then declines</div></div>
+ <div class="card"><div class="name">SOFR Options P/C (07/02)</div><div class="price">748K C / 810K P</div><div class="note">52% put-weighted modest hedging bias toward higher rates</div></div>
+ </div>
+ <div class="chartbox" style="margin-top:16px;">
+ <h3>SOFR Open Interest by Contract Month (Futures, % of Total)</h3>
+ <div class="chart-canvas-wrap"><canvas id="chartSofrOI"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Each bar is the share of SOFR futures open interest sitting in that contract month - where the market's rate-path conviction is physically parked. Tall bars = the FOMC meetings the market is actually betting on. <strong>Current read:</strong> Sep26 (12.7%) and Dec26 (14.1%) tower over neighboring months - rate conviction is front-loaded into the next two quarterly meetings, thinning out fast into 2027. <strong>Use:</strong> Event risk concentrates where OI concentrates: expect the biggest SOFR (and equity-duration) reactions around the Sep/Dec FOMC windows, and treat 2027 pricing as low-conviction guesswork.</div>
+ </div>
+ <div class="commentary">
+ <strong>What this means <span class="badge b-inf">INFERENCE</span>:</strong> SOFR carries by far the largest open interest of any CME product (52.18M contracts F&amp;O combined) this is the single most important rate-hedging instrument in the market. OI is heavily concentrated in the Sep26/Dec26 contracts, meaning the market's rate-policy conviction is front-loaded to the next two FOMC cycles rather than spread evenly across the curve. The revamped <a href="cot.html">COT page</a> now focuses Insider Week equity-index positioning; rates conviction on this page should be read from CME SOFR OI, Treasury flow, and policy-path charts.
+ </div>
+ </div>
+</section>
+
+<section id="policy-path">
+ <h2>4. Implied Policy Path — SOFR Strip <span class="count">FACT (settlements, 07/02/2026) + skill-derived calculation</span></h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">
+ <strong>Methodology (macro-rates-monitor skill):</strong> Each SOFR futures settlement implies a forward 3-month rate: <code>implied rate = 100 - settle price</code>. Reading the strip month-by-month converts the futures board the market actually trades into an explicit policy path — no survey, no dots, just cleared risk.
+ </div>
+ <div class="chartbox" style="margin-top:12px;">
+ <h3>Market-Implied 3M SOFR Path (from SR3 settlements, 07/02/2026)</h3>
+ <div class="chart-canvas-wrap"><canvas id="chartPolicyPath"></canvas></div>
+ <div class="chart-read"><strong>?? How to read:</strong> The line is the forward 3-month rate the futures market has locked in for each contract month — an upward slope means tightening is priced, a hump then decline means "hikes, then relief." <strong>Current read:</strong> From 3.69% (Jun26 spot) the path climbs steadily to 4.00% by Dec26 and peaks ~4.06% at Mar27 before easing — the market prices <em>+31bp of tightening by December (one full 25bp hike plus ~25% odds of a second)</em>, far less than BofA's three-hike call but consistent with the Fed's 3.8% median dot. <strong>Use:</strong> This gap IS the trade: if CPI (Jul 14) runs hot, the strip must reprice toward BofA's path — short SOFR/duration wins; a soft print vindicates the strip and relieves NQ/RTY.</div>
+ </div>
+ <div class="tablewrap" style="margin-top:12px;">
+ <table>
+ <thead><tr><th>Contract</th><th>Settle</th><th>Implied 3M Rate</th><th>? vs Front (bp)</th><th>Read</th></tr></thead>
+ <tbody>
+ <tr><td>Jun26 (front/spot)</td><td class="num">96.3125</td><td class="num">3.688%</td><td class="num">—</td><td>Anchor ˜ current 3M compounded SOFR</td></tr>
+ <tr><td>Sep26</td><td class="num">96.1450</td><td class="num">3.855%</td><td class="num up">+17</td><td>~? of a hike priced into the Sep FOMC window</td></tr>
+ <tr><td>Dec26</td><td class="num">96.0000</td><td class="num">4.000%</td><td class="num up">+31</td><td>One 25bp hike fully priced + ~25% odds of a second</td></tr>
+ <tr><td>Mar27</td><td class="num">95.9450</td><td class="num">4.055%</td><td class="num up">+37</td><td>Peak of the path — terminal-rate expectation</td></tr>
+ <tr><td>Jun27</td><td class="num">95.9650</td><td class="num">4.035%</td><td class="num down">+35</td><td>Slight easing beyond the peak — "hike then hold/trim"</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>Three-way policy-path comparison <span class="badge b-inf">INFERENCE</span>:</strong> The SOFR strip (+31bp by Dec) sits <em>between</em> the Fed's June median dot (3.8% year-end, 9 of 18 officials =1 hike — per <a href="strategists.html">Merrill</a>) and BofA Global Research's aggressive three-hike call (Sep/Oct/Dec, +75bp). The market is paying for roughly one hike and keeping powder dry. Note this dovetails with the OI concentration above: Sep26/Dec26 hold 12.7%/14.1% of futures OI — conviction is parked exactly where the path bends. <strong>Skill-framework caveat:</strong> a full real-rate decomposition (nominal - breakeven) needs TIPS/breakeven data this terminal does not hold; that column is a disclosed gap, not an omission.
+ </div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Sources: CME Group treasury-market-overview-report.pdf, sofr-market-overview-report.pdf (both dated 07/02/2026), UST yield curve re-verified against live feed 2026-07-06 (07/02 and 06/25 rows confirmed exact). PDFs byte-identical to prior pull (no new session — markets closed 07/03, 07/06 not yet settled). Educational framework only.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8'; Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartCurve'), {
+ type:'line',
+ data:{
+ labels:['1M','3M','6M','1Y','2Y','5Y','10Y','20Y','30Y'],
+ datasets:[
+ {label:'2026-06-25', data:[3.70,3.84,3.95,3.96,4.09,4.15,4.40,4.87,4.86], borderColor:'#5b6577', borderDash:[4,3], tension:.2},
+ {label:'2026-07-02', data:[3.70,3.82,3.98,3.96,4.14,4.23,4.49,4.99,4.98], borderColor:'#4da3ff', borderWidth:2.5, tension:.2}
+ ]
+ },
+ options:{ scales:{ y:{ ticks:{ callback:(v)=>v+'%' } } } }
+});
+new Chart(document.getElementById('chartTsyVol'), {
+ type:'bar',
+ data:{
+ labels:['06/26','06/29','06/30','07/01','07/02'],
+ datasets:[{label:'Futures Volume', data:[4858179,3989988,6842009,5932975,5170711], backgroundColor:'#4da3ff'}]
+ },
+ options:{ plugins:{legend:{display:false}}, scales:{ y:{ ticks:{ callback:(v)=>(v/1e6).toFixed(1)+'M' } } } }
+});
+new Chart(document.getElementById('chartSofrOI'), {
+ type:'bar',
+ data:{
+ labels:['26-06','26-07','26-08','26-09','26-10','26-11','26-12','27-03','27-06','27-09','27-12'],
+ datasets:[{label:'% of Futures OI', data:[9.7,3.2,2.4,12.7,1.0,0.9,14.1,8.7,9.8,7.4,9.1], backgroundColor:'#39d6d6'}]
+ },
+ options:{ plugins:{legend:{display:false}}, scales:{ y:{ ticks:{ callback:(v)=>v+'%' } } } }
+});
+new Chart(document.getElementById('chartPolicyPath'), {
+ type:'line',
+ data:{
+ labels:['Jun26','Jul26','Aug26','Sep26','Oct26','Nov26','Dec26','Mar27','Jun27'],
+ datasets:[{
+ label:'Implied 3M SOFR (%)',
+ data:[3.688,3.748,3.810,3.855,3.920,3.965,4.000,4.055,4.035],
+ borderColor:'#ffb020', backgroundColor:'rgba(255,176,32,.12)', fill:true, tension:.25, pointRadius:3
+ }]
+ },
+ options:{ plugins:{legend:{display:false}}, scales:{ y:{ min:3.6, max:4.15, ticks:{ callback:(v)=>v.toFixed(2)+'%' } } } }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

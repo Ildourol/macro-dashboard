@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Options Activity Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html" class="active">Options Activity</a>
+  <a href="futures-setups.html">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Options Activity Across the Complex</h1>
+ <div class="sub">FACT CME equities options overview, daily spread-activity report, crude oil options update, and the Section 74 BTC option chain. All dated 07/02/2026.</div>
+</div>
+
+<section>
+ <h2>1. S&amp;P 500 Options Put/Call Skew, 5-Day Trend</h2>
+ <div class="panel">
+ <div class="chartbox"><div class="chart-canvas-wrap"><canvas id="chartSPXskew"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> Stacked bars split each session's S&amp;P 500 options volume into call share (green) and put share (red). Puts persistently above 50% = structural hedging demand, not one-day panic. <strong>Current read:</strong> Puts led in all five sessions (60-69%), though the put share shrank steadily into 07/02 (69% ? 60%) - hedging pressure easing at the margin, not reversing. <strong>Use:</strong> Persistent put skew + low VIX = insurance is being bought while it is cheap; join that trade rather than fading it, and watch for a flip below 50% put share as the first sign hedges are being monetized.</div>
+ </div>
+ <div class="grid grid-4" style="margin-top:16px;">
+ <div class="card"><div class="name">All S&amp;P 500 Options Vol. (07/02)</div><div class="price">1,127,855</div><div class="note">39.97% calls / 60.03% puts</div></div>
+ <div class="card"><div class="name">All S&amp;P 500 Options OI (07/02)</div><div class="price">4,542,456</div><div class="note">33.27% calls / 66.73% puts persistent put-heavy OI structure</div></div>
+ <div class="card"><div class="name">E-mini Options 0-5 DTE Vol.</div><div class="price">3,468,698</div><div class="note">63.45% puts short-dated hedging/speculation dominates</div></div>
+ <div class="card"><div class="name">E-mini Russell 2000 Opt. 0-5 DTE</div><div class="price">52,033</div><div class="note">28.33% calls / 71.67% puts heaviest put skew of any index bucket</div></div>
+ </div>
+ <div class="commentary">
+ <strong>What this means <span class="badge b-inf">INFERENCE</span>:</strong> Put volume has outweighed call volume in <em>every one</em> of the last 5 sessions across all three major indices (S&amp;P 500, E-mini S&amp;P, Russell 2000). This is a structural hedging bias, not a single-day panic consistent with the "cheap insurance, buy it now" framing on the <a href="risk-lab.html#volatility">Executive Risk Lab</a> page. The Russell 2000's especially heavy put skew (near 72% in the 0-5 day bucket) lines up with its rate-sensitivity flagged on the <a href="futures-setups.html">Trade Setups</a> page.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>2. E-mini S&amp;P 500 Options Daily Spread Activity <span class="count">FACT daily-index-option-spread-activity.pdf, 07/02/2026</span></h2>
+ <div class="panel">
+ <div class="grid grid-3">
+ <div class="card"><div class="name">Total Volume</div><div class="price">933,271</div><div class="note">32.43% Calls / 50.96% Puts / 16.61% Mixed</div></div>
+ <div class="card"><div class="name">Outright vs. Spread</div><div class="price">61.8% / 38.2%</div><div class="note">576,757 outright / 356,514 spread contracts</div></div>
+ <div class="card"><div class="name">Dominant Spread Type</div><div class="price">Vertical (35.5%)</div><div class="note">126,589 of 356,514 spread volume; Generic 30.8% (109,638); Ratio 1x2 12.2% (43,377)</div></div>
+ </div>
+ <div class="chartbox" style="margin-top:16px;">
+ <h3>E-mini S&amp;P 500 Option Spread Volume by Type</h3>
+ <div class="chart-canvas-wrap"><canvas id="chartSpreadType"></canvas></div>
+ <div class="chart-read"><strong>How to read:</strong> The doughnut splits E-mini S&amp;P option <em>spread</em> volume by structure type. Verticals and ratio spreads are defined-risk directional bets; condors/butterflies are range bets; straddles/strangles are volatility bets. <strong>Current read:</strong> Verticals dominate (35.5%) with ratio 1x2s third (12.2%) - traders are expressing direction with capped risk, not buying naked volatility. <strong>Use:</strong> A vertical-heavy book confirms the compressed-vol regime: professionals are financing directional views instead of paying full premium - mimic that (debit spreads over outrights) while VIX stays sub-16.</div>
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>3. NYMEX Crude Oil Options <span class="count">FACT top-nymex-crude-oil-options-daily-market-update.pdf, dated 02/07/2026</span></h2>
+ <div class="panel">
+ <div class="grid grid-4">
+ <div class="card"><div class="name">Total Options Volume</div><div class="price">162,650</div><div class="note">Globex 52%, ClearPort 48% first time ClearPort share exceeded Globex in the 5-day window</div></div>
+ <div class="card"><div class="name">WTI (CL) Futures OI</div><div class="price">1,904,415</div><div class="note">Down from 1,932,308 on 06/26 steady OI erosion over the week</div></div>
+ <div class="card"><div class="name">Brent (BZ) Futures OI</div><div class="price">247,564</div><div class="note">Down sharply from 269,014 on 06/26 (-8%)</div></div>
+ <div class="card"><div class="name">WTI American-Style (LO) Put/Call</div><div class="price">45% / 55%</div><div class="note">Call-led 53,462 calls vs. 44,381 puts</div></div>
+ </div>
+ <div class="commentary">
+ <strong>Top LO strikes traded (26/0602/07):</strong> AUG26 $80 calls (26,652 vol), $70 calls (19,728), $76 calls (17,673) heavy call concentration between $65$80, well above the current WTI spot in the low-$60s per the strategist roundup, indicating positioning for a rebound rather than a breakdown continuation.
+ <br><strong>Top OI strikes:</strong> DEC26 $65 calls (40,257 OI) and $60 calls (38,000 OI) are the largest single positions in the entire crude options book a large, far-dated bullish structural position.
+ <br><strong>Read <span class="badge b-inf">INFERENCE</span>:</strong> Falling futures OI in both WTI and Brent while options call strikes cluster well above spot suggests real-money length is being reduced in the futures market while options traders build asymmetric upside exposure a classic "de-risk the linear position, keep the convex bet" pattern.
+ </div>
+ </div>
+</section>
+
+<section>
+ <h2>4. Bitcoin Options (Section 74) Live Chain Snapshot <span class="count">FACT dated 07/02/2026</span></h2>
+ <div class="panel">
+ <div class="commentary" style="margin-top:0;">JUL26 BTC options, futures settlement reference near $61,655. Selected strikes below (out of hundreds listed in the full chain):</div>
+ <div class="tablewrap">
+ <table>
+ <thead><tr><th>Strike</th><th>Type</th><th>Settle</th><th> (Delta)</th><th>Open Interest</th></tr></thead>
+ <tbody>
+ <tr><td>60,000</td><td>Call</td><td class="num">3,645.00 (+)</td><td class="num">.618</td><td class="num">7,700</td></tr>
+ <tr><td>62,000</td><td>Call</td><td class="num">2,505.00 (+)</td><td class="num">.500</td><td class="num">5,950</td></tr>
+ <tr><td>65,000</td><td>Call</td><td class="num">1,295.00 (+)</td><td class="num">.321</td><td class="num">3,550</td></tr>
+ <tr><td>70,000</td><td>Call</td><td class="num">375.00 (+)</td><td class="num">.118</td><td class="num">1,000</td></tr>
+ <tr><td>58,000</td><td>Put</td><td class="num">1,370.00 (-)</td><td class="num">.280</td><td class="num">5,450</td></tr>
+ <tr><td>60,000</td><td>Put</td><td class="num">1,995.00 (-)</td><td class="num">.381</td><td class="num">7,000</td></tr>
+ <tr><td>62,000</td><td>Put</td><td class="num">2,850.00 (-)</td><td class="num">.499</td><td class="num">8,750</td></tr>
+ <tr><td>65,000</td><td>Put</td><td class="num">4,630.00 (-)</td><td class="num">.678</td><td class="num">11,150</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="commentary">
+ <strong>Read <span class="badge b-inf">INFERENCE</span>:</strong> The 62,000 strike sits closest to at-the-money (delta .50 on both call and put), consistent with the futures settlement near $61,655$62,140 across the curve. Put open interest at the 62,000 and 65,000 strikes (8,750 / 11,150) exceeds the equivalent call OI (5,950 / 3,550) confirming the downside-hedging bias flagged on the Futures Volume &amp; OI page.
+ </div>
+ </div>
+</section>
+
+</main>
+<div class="footer">Sources: CME equities-market-data-overview.pdf, daily-index-option-spread-activity.pdf, top-nymex-crude-oil-options-daily-market-update.pdf, Section74_Cryptocurrency.pdf. Re-verified 2026-07-04: all PDFs byte-identical to prior pull (no new session market closed 07/03). Educational framework only.</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8a95a8'; Chart.defaults.borderColor = '#232b3a';
+new Chart(document.getElementById('chartSPXskew'), {
+ type:'bar',
+ data:{
+ labels:['06/26','06/29','06/30','07/01','07/02'],
+ datasets:[
+ {label:'Call %', data:[30.96,35.05,30.62,34.78,39.97], backgroundColor:'#28c76f'},
+ {label:'Put %', data:[69.04,64.95,69.38,65.22,60.03], backgroundColor:'#ff4d5e'}
+ ]
+ },
+ options:{ scales:{ x:{stacked:true}, y:{stacked:true, ticks:{callback:(v)=>v+'%'}} } }
+});
+new Chart(document.getElementById('chartSpreadType'), {
+ type:'doughnut',
+ data:{
+ labels:['Vertical','Generic','Ratio 1x2','Ratio 1x3','Butterfly','Iron Condor','Straddle/Strangle','Other'],
+ datasets:[{ data:[126589,109638,43377,4364,15636,6640,8636,41634], backgroundColor:['#4da3ff','#39d6d6','#b18bff','#ffb020','#28c76f','#ff4d5e','#8a95a8','#5b6577'] }]
+ },
+ options:{ plugins:{legend:{position:'right', labels:{boxWidth:12,font:{size:11}}}} }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

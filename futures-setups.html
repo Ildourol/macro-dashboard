@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Futures Trade Setups Tactical Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site"><div class="brand">TACTICAL MACRO &amp; FUTURES TERMINAL <span>Bloomberg-style source-audited desk</span></div><div><span class="badge b-fact">51 PDFs</span><span class="badge b-neu">Freshness Ledger</span><span class="badge b-inf">Quant Commentary</span></div></header>
+<nav class="topnav">
+  <a href="index.html">Home</a>
+  <a href="calendar.html">Calendar</a>
+  <a href="strategists.html">Strategist Roundup</a>
+  <a href="market-lab.html">Market Lab &amp; GuruFocus</a>
+  <a href="gamma.html">SPX Gamma</a>
+  <a href="cheat-sheets.html">Barchart Cheat Sheets</a>
+  <a href="rates.html">Rates &amp; SOFR</a>
+  <a href="fx.html">FX Flow</a>
+  <a href="cot.html">COT Positioning</a>
+  <a href="volume-oi.html">Futures Volume &amp; OI</a>
+  <a href="options.html">Options Activity</a>
+  <a href="futures-setups.html" class="active">Trade Setups</a>
+  <a href="quant-framework.html">Quant Framework</a>
+  <a href="risk-lab.html">Executive Risk Lab</a>
+  <a href="source-ledger.html">Source Ledger &amp; Snapshots</a>
+  <a href="guide.html">Index &amp; Operations</a>
+  <a href="playbook.html">Playbook &amp; Bottom Line</a>
+</nav>
+<main>
+<div class="pagehead">
+ <h1>Futures Trade Setups</h1>
+ <div class="sub">Retail-sized micro contracts mapped to each proxy, cross-referenced against gamma levels, COT positioning, and CME volume/OI data from every other page in this terminal.</div>
+</div>
+
+<div class="commentary" style="margin-bottom:14px;background:#141a26;">
+ <strong>Live globex reference <span class="badge b-fact">FACT · FMP feed, Mon 07/06 pre-cash-open</span>:</strong> ES 7,563.25 (+35) · NQ 29,868.75 (+312.75) · YM 53,245 (+62) · RTY 3,019.4 (+5.2) · GC 4,162.5 (+36.8) · CL 68.31 (−0.47) · BTC 62,809 (−1.2%). Pivots below are computed from the 07/02–07/03 sessions and remain the reference grid; use this line only to see where Monday is opening relative to them. <span class="badge b-inf">Read</span> ES is trading ~80pts above Thursday cash and NQ ~1.8% higher — a counter-trend growth bounce that has ES probing the R1/call-wall 7,540–7,550 zone from below; treat a failure there as consistent with the value-over-growth thesis, a sustained reclaim as the tactical invalidation.
+</div>
+
+<div class="tradebox">
+ <h3> ES / MES E-mini &amp; Micro E-mini S&amp;P 500 <span class="badge b-bull">BULLISH (trend), NEUTRAL (this week)</span></h3>
+ <div class="commentary">Proxy: SPY 744.78. Real SPX index-level pivots from stockaio.com (2026-07-03), cross-checked against SPX gamma levels (see <a href="gamma.html">Gamma page</a>).</div>
+ <div class="meta">
+ <div><span>Pivot</span>7,483.85</div>
+ <div><span>R1</span>7,540.14</div>
+ <div><span>R2</span>7,597.05</div>
+ <div><span>S1</span>7,426.94</div>
+ <div><span>S2</span>7,370.65</div>
+ <div><span>S3</span>7,313.74</div>
+ </div>
+ <div class="commentary">
+ <strong>Idea:</strong> S1 (7,426.94) sits almost exactly on the gamma zero-flip ($7,419.32); R1 (7,540.14) sits just below the dealer call wall ($7,550). Three independent methods converge on the 7,4207,550 battle zone. Long entries favored on a pullback toward 7,4207,427 with a stop below 7,370 (S2); breakout entries valid on a sustained push through 7,5407,550.
+ <br><strong>COT context:</strong> Insider Week shows S&amp;P 500 Commercial COT Index at 0% with commercial net -87,130, while the visible AI panel is still bullish 62%. That conflict lowers directional conviction; require live price/gamma confirmation.
+ <br><strong>Retail sizing:</strong> MES (1/10th of ES, ~$5/point).
+ </div>
+</div>
+
+<div class="tradebox">
+ <h3> NQ / MNQ E-mini &amp; Micro E-mini Nasdaq-100 <span class="badge b-bear">BEARISH (tactical)</span></h3>
+ <div class="commentary">Proxy: QQQ 712.60, -1.73%. Real NDX index-level pivots from stockaio.com (2026-07-03).</div>
+ <div class="meta">
+ <div><span>Pivot</span>29,487.00</div>
+ <div><span>R1</span>29,886.70</div>
+ <div><span>S1</span>28,929.50</div>
+ <div><span>S2</span>28,529.80</div>
+ <div><span>Weekly Pivot</span>29,550.50</div>
+ </div>
+ <div class="commentary">
+ <strong>Idea:</strong> NDX trading below its own daily pivot. Sustained break below the S1/S2 band (28,93028,530) opens an air pocket. Counter-trend longs NOT advised MNQ carries by far the heaviest retail futures volume in the entire CME equity-index complex (3.99M contracts on 07/02, see <a href="volume-oi.html">Volume &amp; OI page</a>), meaning this is a crowded long unwind, not a dip-buy setup.
+ <br><strong>Retail sizing:</strong> MNQ ($2/point) for hedging; stop above the weekly pivot (29,550).
+ </div>
+</div>
+
+<div class="tradebox">
+ <h3> YM / MYM E-mini &amp; Micro E-mini Dow <span class="badge b-bull">BULLISH highest conviction long</span></h3>
+ <div class="commentary">Proxy: DIA 527.88, +1.05% session high essentially equals the 52-week high.</div>
+ <div class="meta">
+ <div><span>Pivot (ETF-derived)</span>524.79</div>
+ <div><span>Breakout Trigger</span>528.30 (fresh ATH)</div>
+ <div><span>S1 / Support</span>521.34</div>
+ <div><span>Structural Support</span>505.8 (50D avg)</div>
+ </div>
+ <div class="commentary">
+ <strong>Idea:</strong> Strongest, cleanest momentum-continuation setup in the dataset. A close above 528.3 is a fresh all-time-high breakout. This is the "buy the confirmed leader" trade financing the hedge on the NQ short.
+ <br><strong>Retail sizing:</strong> MYM ($0.50/point).
+ </div>
+</div>
+
+<div class="tradebox">
+ <h3> RTY / M2K E-mini &amp; Micro E-mini Russell 2000 <span class="badge b-neu">NEUTRAL rate-sensitive swing risk</span></h3>
+ <div class="commentary">Proxy: IWM 297.58, -0.58%, fading off a fresh 52-week high printed this session.</div>
+ <div class="meta">
+ <div><span>Pivot</span>298.84</div>
+ <div><span>R1</span>302.71</div>
+ <div><span>S1</span>295.46</div>
+ <div><span>S2</span>291.60</div>
+ </div>
+ <div class="commentary">
+ <strong>Idea:</strong> Small caps are the cleanest read on whether the bond-market bear-steepener bites equities broadly. Its options carry the heaviest put-skew of any index bucket (see <a href="options.html">Options Activity</a>) hold off on fresh longs until the 10Y stabilizes below 4.50% (see <a href="rates.html">Rates page</a>).
+ </div>
+</div>
+
+<div class="tradebox">
+ <h3> ZB / ZN 30Y &amp; 10Y Treasury Bond Futures <span class="badge b-bear">BEARISH (price) bear-steepener continuation</span></h3>
+ <div class="commentary">Driven by 10Y yield 4.485% (+9bp/wk), 30Y yield 4.985% (+12bp/wk). CME Treasury futures OI: 10Y SEP26 5,333,798 / 5Y SEP26 6,213,186 (largest in the complex).</div>
+ <div class="commentary">
+ <strong>Idea:</strong> Treat long-duration bond futures as a tactical short/underweight while the steepening trend is active. Note the sharp call/put skew flip in Treasury options (59.5% calls on 07/02 vs 42.8% on 06/29, see <a href="rates.html">Rates page</a>) a possible early tell of a stabilization, worth confirming on the next session before acting.
+ </div>
+</div>
+
+<div class="tradebox">
+ <h3> DX / USD Index Futures <span class="badge b-neu">NEUTRAL-BEARISH</span></h3>
+ <div class="commentary">DXY 100.59, -0.79%. The revamped COT page now focuses equity-index positioning through Insider Week; use FX Flow as the primary dollar source until FX-specific Insider Week rows are promoted into the dashboard.</div>
+ <div class="commentary">
+ <strong>Idea:</strong> Dollar softness alongside rising long-end UST yields is atypical normally a bond selloff supports the dollar via rate-differential flows. Treat as a mild tailwind for EUR/major crosses against the dollar while monitoring durability.
+ </div>
+</div>
+
+<div class="tradebox">
+ <h3> GC Gold Futures <span class="badge b-bull">NEUTRAL-BULLISH</span></h3>
+ <div class="commentary">CME COMEX Gold (GC) futures volume 145,515, OI 368,898 (+1,813). Gold options volume skews call-heavy at the front (OG2: 1,619 call vs -- see <a href="volume-oi.html">Volume &amp; OI</a>).</div>
+ <div class="commentary">
+ <strong>Idea:</strong> Falling dollar plus an easing front-end bias is constructive for gold; CME OI is building (+1,813 day/day) even as volume normalizes. Retail traders can treat pullbacks in GC/MGC (micro gold) as buyable dips within this backdrop.
+ </div>
+</div>
+
+<div class="tradebox">
+ <h3> CL WTI Crude Oil Futures <span class="badge b-neu">NEUTRAL falling OI, call-skewed options</span></h3>
+ <div class="commentary">CME NYMEX Crude (CL) futures volume 651,663, OI 1,904,415 (declining from 1,932,308 on 06/26). Options: 55% put-weighted overall, but AUG26 call strikes cluster $65-80 well above spot (see <a href="options.html">Options Activity</a>).</div>
+ <div class="commentary">
+ <strong>Idea:</strong> Real-money futures length appears to be reducing (falling OI) while options traders build convex upside exposure via calls a "de-risk the linear position, keep the convex bet" pattern. Not a clean directional signal; best expressed via defined-risk option structures rather than outright futures until OI stabilizes.
+ </div>
+</div>
+
+<div class="tradebox">
+ <h3> BTC Futures / MBT Micro Bitcoin <span class="badge b-bear">STRONGEST BEARISH</span></h3>
+ <div class="commentary">Spot proxy $62,113.79, +1.01% but 51% off 52-week high. CME MBT futures OI fell -358 contracts on 07/02 despite the bounce; options put OI at 62k/65k strikes exceeds call OI (see <a href="options.html">Options Activity</a>).</div>
+ <div class="commentary">
+ <strong>Idea:</strong> This is the most structurally damaged chart on the entire terminal. Today's bounce is noise inside a well-established downtrend, confirmed by both the falling futures OI and the put-skewed options book. Wait for a reclaim of the 50D average ($67,700) on a closing basis before treating any bounce as more than a relief rally.
+ </div>
+</div>
+
+</main>
+<div class="footer">Cross-referenced across every terminal page. Educational framework only not investment advice. Futures trading involves substantial risk of loss.</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
